@@ -6,7 +6,7 @@ export default function SearchSection() {
   const [searchText, setSearchText] = useState("");
 
   return (
-    <div className="header-big mb-4">
+    <div className="flex justify-center items-center py-4 bg-[url('/images/bg-dna.jpg')]">
       <div className="s-search">
         <div id="search" className="s-search mx-auto">
           <div className="search-wrapper">

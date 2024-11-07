@@ -4,23 +4,95 @@ import Sidebar from "@/components/Sidebar";
 import Header from "@/components/Header";
 import SearchSection from "@/components/SearchSection";
 import SiteList from "@/components/SiteList";
+import "./page.css";
+import SiteSection from "@/components/SiteSection";
+const sites = [
+  {
+    name: "语雀",
+    description: "专业的云端知识库",
+    logoSrc: "/images/logos/语雀.jpg",
+    url: "https://www.yuque.com/",
+  },
+  {
+    name: "QQ 邮箱",
+    description: "腾讯 QQ 邮箱。",
+    logoSrc: "/images/logos/qq邮箱.png",
+    url: "https://mail.qq.com/",
+  },
+  {
+    name: "开源中国",
+    description: "中文开源技术交流社区。",
+    logoSrc: "/images/logos/开源中国.jpg",
+    url: "https://www.oschina.net/",
+  },
+  {
+    name: "公众号平台",
+    description: "再小的个体也有自己的品牌。",
+    logoSrc: "/images/logos/微信公众号.png",
+    url: "https://mp.weixin.qq.com/",
+  },
+  {
+    name: "GitHub",
+    description: "GitHub 开源社区。",
+    logoSrc: "/images/logos/github.jpg",
+    url: "https://github.com/",
+  },
+  {
+    name: "在线ps",
+    description: "一键p图抠图工具",
+    logoSrc: "/images/logos/inoreader.jpg",
+    url: "https://ps.gitapp.cn/",
+  },
+  {
+    name: "房贷计算器",
+    description: "房贷利率计算器",
+    logoSrc: "/images/logos/awesome_design_systems.png",
+    url: "https://fangdaijisuanqi.vip",
+  },
+  {
+    name: "m3u8在线播放器",
+    description: "m3u8/hls在线播放",
+    logoSrc: "/images/logos/Material_Design.png",
+    url: "https://m3u8player.org/",
+  },
+  {
+    name: "在线工具助手",
+    description: "一些常见的开发工具",
+    logoSrc: "/images/logos/mdx.png",
+    url: "https://fktool.com",
+  },
+  {
+    name: "搜狗微信",
+    description: "搜狗微信搜索，一搜即达。",
+    logoSrc: "/images/logos/搜狗微信.jpg",
+    url: "https://weixin.sogou.com/",
+  },
+  {
+    name: "知乎",
+    description: "知乎社区。",
+    logoSrc: "/images/logos/知乎.png",
+    url: "https://www.zhihu.com/",
+  },
+  {
+    name: "V2EX",
+    description: "V2EX 创意工作者的社区。",
+    logoSrc: "/images/logos/v2ex.jpg",
+    url: "https://www.v2ex.com/",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex">
+    <div className="min-h-screen flex grid-bg">
       {/* 侧边栏 */}
       <Sidebar />
 
-      <div className="flex-1 min-w-0">
-        <div className="main-content flex flex-col">
-          {/* 顶部导航 */}
-          <Header />
+      <div className="flex-1 flex flex-col">
+        {/* 搜索区域 */}
+        <SearchSection />
 
-          {/* 搜索区域 */}
-          <SearchSection />
-
-          {/* 网站列表区域 */}
-          <SiteList />
+        <div className="container mx-auto max-w-[1900px]">
+          <SiteSection title="常用工具" sites={sites} />
         </div>
       </div>
     </div>
