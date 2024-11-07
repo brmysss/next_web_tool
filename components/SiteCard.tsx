@@ -1,3 +1,5 @@
+"use client";
+
 import { CircleChevronRight } from "lucide-react";
 import {
   Tooltip,
@@ -6,6 +8,7 @@ import {
   TooltipTrigger,
   TooltipArrow,
 } from "./ui/tooltip";
+import { useState } from "react";
 
 export default function SiteCard({
   name,
@@ -18,9 +21,10 @@ export default function SiteCard({
   logoSrc: string;
   url: string;
 }) {
+  const [isBottomTooltipOpen, setIsBottomTooltipOpen] = useState(false);
   return (
     <TooltipProvider delayDuration={100}>
-      <Tooltip>
+      <Tooltip open={isBottomTooltipOpen} onOpenChange={setIsBottomTooltipOpen}>
         <TooltipTrigger asChild>
           <a
             href={url}
@@ -41,7 +45,10 @@ export default function SiteCard({
               <TooltipProvider delayDuration={100}>
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <CircleChevronRight className="w-4 h-4 text-gray-200 transition-colors duration-200 group-hover:text-gray-400" />
+                    <CircleChevronRight
+                      className="w-4 h-4 text-gray-200 transition-colors duration-200 group-hover:text-gray-400"
+                      onMouseLeave={() => setIsBottomTooltipOpen(true)}
+                    />
                   </TooltipTrigger>
                   <TooltipContent side="right">
                     <TooltipArrow />
