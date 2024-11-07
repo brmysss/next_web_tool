@@ -9,6 +9,8 @@ import {
   TooltipArrow,
 } from "./ui/tooltip";
 import { useState } from "react";
+import FallbackImage from "./FallbackImage";
+const delayDuration = 100;
 
 export default function SiteCard({
   name,
@@ -23,7 +25,7 @@ export default function SiteCard({
 }) {
   const [isBottomTooltipOpen, setIsBottomTooltipOpen] = useState(false);
   return (
-    <TooltipProvider delayDuration={100}>
+    <TooltipProvider delayDuration={delayDuration}>
       <Tooltip open={isBottomTooltipOpen} onOpenChange={setIsBottomTooltipOpen}>
         <TooltipTrigger asChild>
           <a
@@ -33,23 +35,24 @@ export default function SiteCard({
             className="block w-full h-full no-underline"
           >
             <div className="group w-full h-full flex bg-white rounded-lg shadow-md p-4 justify-between items-center transition-transform duration-200 hover:-translate-y-1">
-              <div className="flex items-center">
-                <img
+              <div className="flex items-center flex-1 min-w-0">
+                <FallbackImage
                   src={logoSrc}
                   alt={name}
-                  onError={(e) => {
-                    console.error("图片加载失败");
-                  }}
                   className="h-10 w-10 mr-2"
+                  width={40}
+                  height={40}
                 />
-                <div className="flex flex-col justify-center">
+                <div className="flex flex-col justify-center flex-1 min-w-0">
                   <p className="font-bold text-sm group-hover:text-red-500 transition-colors duration-200">
                     {name}
                   </p>
-                  <p className="text-xs text-gray-500">{description}</p>
+                  <p className="text-xs font-normal text-gray-500 overflow-hidden text-ellipsis whitespace-nowrap block">
+                    {description}
+                  </p>
                 </div>
               </div>
-              <TooltipProvider delayDuration={100}>
+              <TooltipProvider delayDuration={delayDuration}>
                 <Tooltip>
                   <TooltipTrigger asChild>
                     <CircleChevronRight
