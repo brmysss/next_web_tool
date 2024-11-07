@@ -1,0 +1,41 @@
+{
+  "title": "PPT资源",
+  "sites": [
+    {
+      "name": "OfficePLUS",
+      "description": "OfficePLUS，微软Office官方在线模板网站！",
+      "logoSrc": "/images/logos/officeplus.png",
+      "url": "http://www.officeplus.cn/Template/Home.shtml"
+    },
+    {
+      "name": "优品PPT",
+      "description": "高质量的模版，而且还有PPT图表，PPT背景图等资源。",
+      "logoSrc": "/images/logos/ypppt.png",
+      "url": "http://www.ypppt.com/"
+    },
+    {
+      "name": "PPT+",
+      "description": "PPT加直播、录制和分享—PPT+语音内容分享平台。",
+      "logoSrc": "/images/logos/pptplus.png",
+      "url": "http://www.pptplus.cn/"
+    },
+    {
+      "name": "PPTMind",
+      "description": "分享高端 ppt 模板与 keynote 模板的数字作品交易平台。",
+      "logoSrc": "/images/logos/pptmind.png",
+      "url": "http://www.pptmind.com/"
+    },
+    {
+      "name": "tretars",
+      "description": "The best free Mockups from the Web.",
+      "logoSrc": "/images/logos/tretars.png",
+      "url": "http://www.tretars.com/ppt-templates"
+    },
+    {
+      "name": "5百丁",
+      "description": "中国领先的PPT模板共享平台。",
+      "logoSrc": "/images/logos/500d.png",
+      "url": "http://ppt.500d.me/"
+    }
+  ]
+}

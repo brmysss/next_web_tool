@@ -1,0 +1,41 @@
+{
+  "title": "谷歌插件",
+  "sites": [
+    {
+      "name": "wappalyzer",
+      "description": "Identify technology on websites.",
+      "logoSrc": "/images/logos/wappalyzer.png",
+      "url": "https://www.wappalyzer.com/"
+    },
+    {
+      "name": "Panda",
+      "description": "A smart news reader built for productivity.",
+      "logoSrc": "/images/logos/usepanda.png",
+      "url": "http://usepanda.com/"
+    },
+    {
+      "name": "sizzy",
+      "description": "A tool for developing responsive websites crazy-fast.",
+      "logoSrc": "/images/logos/sizzy.png",
+      "url": "https://sizzy.co/"
+    },
+    {
+      "name": "csspeeper",
+      "description": "Smart CSS viewer tailored for Designers.",
+      "logoSrc": "/images/logos/csspeeper.png",
+      "url": "https://csspeeper.com/"
+    },
+    {
+      "name": "insight",
+      "description": "IDE-like code search and navigation, on the cloud.",
+      "logoSrc": "/images/logos/insight.png",
+      "url": "http://insight.io/"
+    },
+    {
+      "name": "mustsee",
+      "description": "Discover the world's most beautiful places at every opened tab.",
+      "logoSrc": "/images/logos/mustsee.png",
+      "url": "http://mustsee.earth/"
+    }
+  ]
+}

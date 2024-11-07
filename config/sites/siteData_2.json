@@ -1,0 +1,41 @@
+{
+  "title": "生物信息",
+  "sites": [
+    {
+      "name": "NCBI",
+      "description": "National Center for Biotechnology Information.",
+      "logoSrc": "/images/logos/ncbi.jpg",
+      "url": "https://www.ncbi.nlm.nih.gov/"
+    },
+    {
+      "name": "Bioconda",
+      "description": "Bioconda :: Anaconda.org.",
+      "logoSrc": "/images/logos/bioconda.jpg",
+      "url": "https://anaconda.org/bioconda/"
+    },
+    {
+      "name": "CPAN",
+      "description": "Search the CPAN.",
+      "logoSrc": "/images/logos/cpan.jpg",
+      "url": "https://metacpan.org/"
+    },
+    {
+      "name": "Gitter Galaxy",
+      "description": "Galaxy Gitter Community.",
+      "logoSrc": "/images/logos/gitter.jpg",
+      "url": "https://gitter.im/galaxyproject"
+    },
+    {
+      "name": "R Project",
+      "description": "https://www.r-project.org",
+      "logoSrc": "/images/logos/r-project.jpg",
+      "url": "https://www.r-project.org/"
+    },
+    {
+      "name": "Bioconductor",
+      "description": "http://www.bioconductor.org",
+      "logoSrc": "/images/logos/bioconductor.jpg",
+      "url": "http://www.bioconductor.org/"
+    }
+  ]
+}

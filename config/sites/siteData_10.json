@@ -1,0 +1,83 @@
+{
+  "title": "平面素材",
+  "sites": [
+    {
+      "name": "freepik",
+      "description": "More than a million free vectors, PSD, photos and free icons.",
+      "logoSrc": "/images/logos/freepik.png",
+      "url": "https://www.freepik.com/"
+    },
+    {
+      "name": "wallhalla",
+      "description": "Find awesome high quality wallpapers for desktop and mobile in one place.",
+      "logoSrc": "/images/logos/wallhalla.png",
+      "url": "https://wallhalla.com/"
+    },
+    {
+      "name": "365PSD",
+      "description": "Free PSD &amp; Graphics, Illustrations.",
+      "logoSrc": "/images/logos/365PSD.png",
+      "url": "https://365psd.com/"
+    },
+    {
+      "name": "Medialoot",
+      "description": "Free &amp; Premium Design Resources &mdash; Medialoot.",
+      "logoSrc": "/images/logos/Medialoot.png",
+      "url": "https://medialoot.com/"
+    },
+    {
+      "name": "千图网",
+      "description": "专注免费设计素材下载的网站.",
+      "logoSrc": "/images/logos/qiantu.png",
+      "url": "http://www.58pic.com/"
+    },
+    {
+      "name": "千库网",
+      "description": "免费 png 图片背景素材下载。",
+      "logoSrc": "/images/logos/qianku.png",
+      "url": "http://588ku.com/"
+    },
+    {
+      "name": "我图网",
+      "description": "我图网，提供图片素材及模板下载，专注正版设计作品交易。",
+      "logoSrc": "/images/logos/wotu.png",
+      "url": "http://www.ooopic.com/"
+    },
+    {
+      "name": "90 设计",
+      "description": "电商设计（淘宝美工）千图免费淘宝素材库。",
+      "logoSrc": "/images/logos/90sheji.png",
+      "url": "http://90sheji.com/"
+    },
+    {
+      "name": "昵图网",
+      "description": "原创素材共享平台。",
+      "logoSrc": "/images/logos/nipic.png",
+      "url": "http://www.nipic.com/"
+    },
+    {
+      "name": "懒人图库",
+      "description": "懒人图库专注于提供网页素材下载。",
+      "logoSrc": "/images/logos/lanrentuku.png",
+      "url": "http://www.lanrentuku.com/"
+    },
+    {
+      "name": "素材搜索",
+      "description": "设计素材搜索聚合。",
+      "logoSrc": "/images/logos/sousucai.png",
+      "url": "http://so.ui001.com/"
+    },
+    {
+      "name": "PS 饭团网",
+      "description": "不一样的设计素材库！让自己的设计与众不同！",
+      "logoSrc": "/images/logos/psefan.png",
+      "url": "http://psefan.com/"
+    },
+    {
+      "name": "素材中国",
+      "description": "免费素材共享平台。",
+      "logoSrc": "/images/logos/sccnn.png",
+      "url": "http://www.sccnn.com/"
+    }
+  ]
+}

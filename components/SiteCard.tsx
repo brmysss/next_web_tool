@@ -34,7 +34,14 @@ export default function SiteCard({
           >
             <div className="group w-full h-full flex bg-white rounded-lg shadow-md p-4 justify-between items-center transition-transform duration-200 hover:-translate-y-1">
               <div className="flex items-center">
-                <img src={logoSrc} alt={name} className="h-10 w-10 mr-2" />
+                <img
+                  src={logoSrc}
+                  alt={name}
+                  onError={(e) => {
+                    console.error("图片加载失败");
+                  }}
+                  className="h-10 w-10 mr-2"
+                />
                 <div className="flex flex-col justify-center">
                   <p className="font-bold text-sm group-hover:text-red-500 transition-colors duration-200">
                     {name}

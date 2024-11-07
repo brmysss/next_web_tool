@@ -1,0 +1,35 @@
+{
+  "title": "博客论坛",
+  "sites": [
+    {
+      "name": "Inoreader",
+      "description": "重新掌控你的新闻订阅源。",
+      "logoSrc": "/images/logos/inoreader.jpg",
+      "url": "https://www.inoreader.com/"
+    },
+    {
+      "name": "Hacker News",
+      "description": "一家关于计算机黑客和创业公司的社会化新闻网站。",
+      "logoSrc": "/images/logos/hacker-news.jpg",
+      "url": "https://news.ycombinator.com/"
+    },
+    {
+      "name": "经管之家",
+      "description": "国内活跃的经济、管理、金融、统计在线教育和咨询网站。",
+      "logoSrc": "/images/logos/经管之家.jpg",
+      "url": "https://bbs.pinggu.org/"
+    },
+    {
+      "name": "阮一峰的网络日志",
+      "description": "阮一峰，科技爱好者周刊。",
+      "logoSrc": "/images/logos/阮一峰.png",
+      "url": "http://www.ruanyifeng.com/blog/"
+    },
+    {
+      "name": "酷壳",
+      "description": "酷 壳 – CoolShell。",
+      "logoSrc": "/images/logos/",
+      "url": "https://www.coolshell.cn/"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "title": "在线工具",
+  "sites": [
+    {
+      "name": "tinypng",
+      "description": "Optimize your images with a perfect balance in quality and file size.",
+      "logoSrc": "/images/logos/tinypng.png",
+      "url": "https://tinypng.com/"
+    },
+    {
+      "name": "goqr",
+      "description": "create QR codes for free (Logo, T-Shirt, vCard, EPS).",
+      "logoSrc": "/images/logos/goqr.png",
+      "url": "http://goqr.me/"
+    },
+    {
+      "name": "ezgif",
+      "description": "simple online GIF maker and toolset for basic animated GIF editing.",
+      "logoSrc": "/images/logos/ezgif.png",
+      "url": "https://ezgif.com"
+    },
+    {
+      "name": "Android 9 patch",
+      "description": "Android 9-patch shadow generator fully customizable shadows.",
+      "logoSrc": "/images/logos/Android9patch.png",
+      "url": "http://inloop.github.io/shadow4android/"
+    },
+    {
+      "name": "screen sizes",
+      "description": "Viewport Sizes and Pixel Densities for Popular Devices.",
+      "logoSrc": "/images/logos/screensizes.png",
+      "url": "http://screensiz.es/"
+    },
+    {
+      "name": "base64在线解码",
+      "description": "base64在线解码与编码",
+      "logoSrc": "/images/logos/svgomg.png",
+      "url": "https://base64.icu"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "title": "资讯书籍",
+  "sites": [
+    {
+      "name": "微信读书",
+      "description": "微信读书电脑版。",
+      "logoSrc": "/images/logos/微信读书.jpg",
+      "url": "https://weread.qq.com/"
+    },
+    {
+      "name": "书栈网",
+      "description": "IT 互联网开源编程书籍免费阅读与下载。",
+      "logoSrc": "/images/logos/书栈网.jpg",
+      "url": "https://www.bookstack.cn/"
+    }
+  ]
+}

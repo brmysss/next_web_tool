@@ -1,0 +1,35 @@
+{
+  "title": "设计规范",
+  "sites": [
+    {
+      "name": "Design Guidelines",
+      "description": "Design Guidelines &mdash; The way products are built.",
+      "logoSrc": "/images/logos/designguidelines.png",
+      "url": "http://designguidelines.co/"
+    },
+    {
+      "name": "Awesome design systems",
+      "description": "A collection of awesome design systems.",
+      "logoSrc": "/images/logos/awesome_design_systems.png",
+      "url": "https://github.com/alexpate/awesome-design-systems"
+    },
+    {
+      "name": "Material Design",
+      "description": "Introduction - Material Design.",
+      "logoSrc": "/images/logos/Material_Design.png",
+      "url": "https://material.io/guidelines/"
+    },
+    {
+      "name": "Human Interface Guidelines",
+      "description": "Human Interface Guidelines iOS.",
+      "logoSrc": "/images/logos/human_interface_guidelines.png",
+      "url": "https://developer.apple.com/ios/human-interface-guidelines"
+    },
+    {
+      "name": "在线图像编辑器",
+      "description": "在线图像编辑器",
+      "logoSrc": "/images/logos/photoshopetiquette.png",
+      "url": "https://zaixianps.net/?ref=hrzhanghuan.com"
+    }
+  ]
+}

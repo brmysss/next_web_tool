@@ -1,0 +1,95 @@
+{
+  "title": "字体资源",
+  "sites": [
+    {
+      "name": "Google Font",
+      "description": "Making the web more beautiful, fast, and open through great typography.",
+      "logoSrc": "/images/logos/googlefont.png",
+      "url": "https://fonts.google.com/"
+    },
+    {
+      "name": "Typekit",
+      "description": "Quality fonts from the world’s best foundries.",
+      "logoSrc": "/images/logos/typekit.png",
+      "url": "https://typekit.com/"
+    },
+    {
+      "name": "方正字库",
+      "description": "方正字库官方网站。",
+      "logoSrc": "/images/logos/Fondertype.png",
+      "url": "http://www.foundertype.com/"
+    },
+    {
+      "name": "字体传奇网",
+      "description": "中国首个字体品牌设计师交流网。",
+      "logoSrc": "/images/logos/ziticq.png",
+      "url": "http://ziticq.com/"
+    },
+    {
+      "name": "私藏字体",
+      "description": "优质字体免费下载站。",
+      "logoSrc": "/images/logos/sicangziti.png",
+      "url": "http://sicangziti.com/"
+    },
+    {
+      "name": "Fontsquirrel",
+      "description": "FREE fonts for graphic designers.",
+      "logoSrc": "/images/logos/fontsquirrel.png",
+      "url": "https://www.fontsquirrel.com/"
+    },
+    {
+      "name": "Urban Fonts",
+      "description": "Download Free Fonts and Free Dingbats.",
+      "logoSrc": "/images/logos/UrbanFonts.png",
+      "url": "https://www.urbanfonts.com/"
+    },
+    {
+      "name": "Lost Type",
+      "description": "Lost Type is a Collaborative Digital Type Foundry.",
+      "logoSrc": "/images/logos/losttype.png",
+      "url": "http://www.losttype.com/"
+    },
+    {
+      "name": "FONTS2U",
+      "description": "Download free fonts for Windows and Macintosh.",
+      "logoSrc": "/images/logos/fonts2u.png",
+      "url": "https://fonts2u.com/"
+    },
+    {
+      "name": "Fontex",
+      "description": "Free Fonts to Download + Premium Typefaces.",
+      "logoSrc": "/images/logos/fontex.png",
+      "url": "http://www.fontex.org/"
+    },
+    {
+      "name": "FontM",
+      "description": "Free Fonts",
+      "logoSrc": "/images/logos/FontM.png",
+      "url": "http://fontm.com/"
+    },
+    {
+      "name": "My Fonts",
+      "description": "Fonts for Print, Products & Screens.",
+      "logoSrc": "/images/logos/MyFonts.png",
+      "url": "http://www.myfonts.com/"
+    },
+    {
+      "name": "Da Font",
+      "description": "Archive of freely downloadable fonts.",
+      "logoSrc": "/images/logos/dafont.png",
+      "url": "https://www.dafont.com/"
+    },
+    {
+      "name": "OnlineWebFonts",
+      "description": "WEB Free Fonts for Windows and Mac / Font free Download.",
+      "logoSrc": "/images/logos/OnlineWebFonts.png",
+      "url": "https://www.onlinewebfonts.com/"
+    },
+    {
+      "name": "Abstract Fonts",
+      "description": "Abstract Fonts (13,866 free fonts).",
+      "logoSrc": "/images/logos/abstractfonts.png",
+      "url": "http://www.abstractfonts.com/"
+    }
+  ]
+}

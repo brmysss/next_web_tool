@@ -1,0 +1,29 @@
+{
+  "title": "网盘资源",
+  "sites": [
+    {
+      "name": "百度网盘",
+      "description": "https://pan.baidu.com/.",
+      "logoSrc": "/images/logos/百度网盘.jpg",
+      "url": "http://pan.baidu.com/"
+    },
+    {
+      "name": "阿里云盘",
+      "description": "阿里云盘，你的数字世界。",
+      "logoSrc": "/images/logos/阿里云盘.png",
+      "url": "https://www.aliyundrive.com/"
+    },
+    {
+      "name": "天翼云盘",
+      "description": "家庭云|网盘|文件备份|资源分享。",
+      "logoSrc": "/images/logos/天翼云盘.jpg",
+      "url": "https://cloud.189.cn/"
+    },
+    {
+      "name": "坚果云",
+      "description": "坚果云官网。",
+      "logoSrc": "/images/logos/坚果云.png",
+      "url": ""
+    }
+  ]
+}

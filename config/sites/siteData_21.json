@@ -1,0 +1,29 @@
+{
+  "title": "视频教程",
+  "sites": [
+    {
+      "name": "Photoshop Lady",
+      "description": "Your Favourite Photoshop Tutorials in One Place.",
+      "logoSrc": "/images/logos/PhotoshopLady.png",
+      "url": "http://www.photoshoplady.com/"
+    },
+    {
+      "name": "doyoudo",
+      "description": "创意设计软件学习平台。",
+      "logoSrc": "/images/logos/doyoudo.png",
+      "url": "http://doyoudo.com/"
+    },
+    {
+      "name": "没位道",
+      "description": "WEB UI免费视频公开课。",
+      "logoSrc": "/images/logos/web_ui_tutorial.png",
+      "url": "http://www.c945.com/web-ui-tutorial/"
+    },
+    {
+      "name": "慕课网",
+      "description": "程序员的梦工厂（有UI课程）。",
+      "logoSrc": "/images/logos/imooc.png",
+      "url": "https://www.imooc.com/"
+    }
+  ]
+}

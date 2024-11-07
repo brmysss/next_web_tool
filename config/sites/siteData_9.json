@@ -1,0 +1,29 @@
+{
+  "title": "图标设计",
+  "sites": [
+    {
+      "name": "Iconsfeed",
+      "description": "iOS icons gallery.",
+      "logoSrc": "/images/logos/iconsfeed.png",
+      "url": "http://www.iconsfeed.com/"
+    },
+    {
+      "name": "iOS Icon Gallery",
+      "description": "Showcasing beautiful icon designs from the iOS App Store.",
+      "logoSrc": "/images/logos/iosicongallery.png",
+      "url": "http://iosicongallery.com/"
+    },
+    {
+      "name": "World Vector Logo",
+      "description": "Brand logos free to download.",
+      "logoSrc": "/images/logos/worldvectorlogo.png",
+      "url": "https://worldvectorlogo.com/"
+    },
+    {
+      "name": "Instant Logo Search",
+      "description": "Search & download thousands of logos instantly.",
+      "logoSrc": "/images/logos/InstantLogoSearch.png",
+      "url": "http://instantlogosearch.com/"
+    }
+  ]
+}

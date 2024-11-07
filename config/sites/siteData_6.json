@@ -1,0 +1,17 @@
+{
+  "title": "游戏竞技",
+  "sites": [
+    {
+      "name": "百度贴吧",
+      "description": "百度贴吧。",
+      "logoSrc": "/images/logos/百度贴吧.jpg",
+      "url": "#ZgotmplZ"
+    },
+    {
+      "name": "台服战地",
+      "description": "台服 AVA 战地之王。",
+      "logoSrc": "/images/logos/战地之王.png",
+      "url": "https://ava.mangot5.com/ava/index"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "title": "图形创意",
+  "sites": [
+    {
+      "name": "photoshop",
+      "description": "Photoshop不需要解释",
+      "logoSrc": "/images/logos/photoshop.png",
+      "url": "https://www.adobe.com/cn/products/photoshop.html"
+    },
+    {
+      "name": "Affinity Designer",
+      "description": "专业创意软件",
+      "logoSrc": "/images/logos/AffinityDesigner.png",
+      "url": "https://affinity.serif.com/"
+    },
+    {
+      "name": "Illustrator",
+      "description": "矢量图形和插图。",
+      "logoSrc": "/images/logos/Illustrator.png",
+      "url": "https://www.adobe.com/cn/products/illustrator/"
+    },
+    {
+      "name": "indesign",
+      "description": "页面设计、布局和出版。",
+      "logoSrc": "/images/logos/INDESIGN .png",
+      "url": "http://www.adobe.com/cn/products/indesign.html"
+    },
+    {
+      "name": "cinema-4d",
+      "description": "Cinema 4D is the perfect package for all 3D artists who want to achieve breathtaking results fast and hassle-free.",
+      "logoSrc": "/images/logos/cinema4d.png",
+      "url": "https://www.maxon.net/en/products/cinema-4d/overview/"
+    },
+    {
+      "name": "3ds-max",
+      "description": "3D modeling, animation, and rendering software",
+      "logoSrc": "/images/logos/3dsmax.png",
+      "url": "https://www.autodesk.com/products/3ds-max/overview"
+    },
+    {
+      "name": "Blender",
+      "description": "Blender is the free and open source 3D creation suite.",
+      "logoSrc": "/images/logos/blender.png",
+      "url": "https://www.blender.org/"
+    }
+  ]
+}

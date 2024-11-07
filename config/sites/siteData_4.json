@@ -1,0 +1,29 @@
+{
+  "title": "办公学习",
+  "sites": [
+    {
+      "name": "有道词典",
+      "description": "免费，即时的多语种在线翻译。",
+      "logoSrc": "/images/logos/有道词典.png",
+      "url": "https://www.youdao.com/"
+    },
+    {
+      "name": "有道翻译",
+      "description": "有道翻译。",
+      "logoSrc": "/images/logos/有道词典.png",
+      "url": "http://fanyi.youdao.com/"
+    },
+    {
+      "name": "谷歌翻译",
+      "description": "谷歌翻译。",
+      "logoSrc": "/images/logos/谷歌翻译.jpg",
+      "url": "https://translate.google.cn/"
+    },
+    {
+      "name": "ProcessOn",
+      "description": "免费在线作图、实时协作。",
+      "logoSrc": "/images/logos/ProcessOn.png",
+      "url": "https://www.processon.com/"
+    }
+  ]
+}

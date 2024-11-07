@@ -17,7 +17,7 @@ export default function Sidebar() {
   const [isCollapsed, setIsCollapsed] = useState(false);
 
   return (
-    <div className="sticky sidebar-nav fade animate-nav w-[170px] bg-purple-400">
+    <div className="fixed left-0 top-0 h-screen fade animate-nav w-[170px] bg-white">
       <div className="modal-dialog h-full sidebar-nav-inner">
         {/* Logo区域 */}
         <div className="sidebar-logo py-6 flex items-center pl-4">
