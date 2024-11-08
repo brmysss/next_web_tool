@@ -12,6 +12,7 @@ import {
   Star,
   Wrench,
 } from "lucide-react";
+import ExpandableMenu from "./ExpandableMenu";
 
 export default function Sidebar() {
   const [isCollapsed, setIsCollapsed] = useState(false);
@@ -61,24 +62,31 @@ export default function Sidebar() {
             <div className="sidebar-menu-inner">
               <ul>
                 <li>
-                  <Link
-                    href="#3e90c5117dc0fe9d71410e448d766e52"
-                    className="py-4 smooth flex items-center pl-6 gap-2 hover:text-red-500 text-sm"
-                  >
-                    <Star className="w-4 h-4" />
-                    <span>常用工具</span>
-                  </Link>
+                  <ExpandableMenu
+                    icon={<Star className="w-4 h-4" />}
+                    title="常用工具"
+                  />
                 </li>
 
                 <li>
-                  <Link
-                    href="#3e90c5117dc0fe9d71410e448d766e52"
-                    className="py-4 smooth flex items-center pl-6 hover:text-red-500 text-sm"
-                  >
-                    <FlaskConical className="w-4 h-4 mr-2" />
-                    <span>科研办公</span>
-                    <ChevronRight className="ml-4 w-4 h-4" />
-                  </Link>
+                  <ExpandableMenu
+                    icon={<FlaskConical className="w-4 h-4" />}
+                    title="科研办公"
+                    subMenu={[
+                      {
+                        title: "生物信息",
+                        href: "#3e90c5117dc0fe9d71410e448d766e52",
+                      },
+                      {
+                        title: "云服务器",
+                        href: "#3e90c5117dc0fe9d71410e448d766e52",
+                      },
+                      {
+                        title: "办公学习",
+                        href: "#3e90c5117dc0fe9d71410e448d766e52",
+                      },
+                    ]}
+                  />
                 </li>
                 <li>
                   <Link
