@@ -89,44 +89,104 @@ export default function Sidebar() {
                   />
                 </li>
                 <li>
-                  <Link
-                    href="#3e90c5117dc0fe9d71410e448d766e52"
-                    className="py-4 smooth flex items-center pl-6 hover:text-red-500 text-sm"
-                  >
-                    <Film className="w-4 h-4 mr-2" />
-                    <span>休闲娱乐</span>
-                    <ChevronRight className="ml-4 w-4 h-4" />
-                  </Link>
+                  <ExpandableMenu
+                    icon={<Film className="w-4 h-4" />}
+                    title="休闲娱乐"
+                    subMenu={[
+                      {
+                        title: "影音视频",
+                        href: "#3e90c5117dc0fe9d71410e448d766e52",
+                      },
+                      {
+                        title: "游戏竞技",
+                        href: "#3e90c5117dc0fe9d71410e448d766e52",
+                      },
+                    ]}
+                  />
                 </li>
                 <li>
-                  <Link
-                    href="#3e90c5117dc0fe9d71410e448d766e52"
-                    className="py-4 smooth flex items-center pl-6 hover:text-red-500 text-sm"
-                  >
-                    <FolderOpen className="w-4 h-4 mr-2" />
-                    <span>素材资源</span>
-                    <ChevronRight className="ml-4 w-4 h-4" />
-                  </Link>
+                  <ExpandableMenu
+                    icon={<FolderOpen className="w-4 h-4" />}
+                    title="素材资源"
+                    subMenu={[
+                      {
+                        title: "网盘资源",
+                        href: "#3e90c5117dc0fe9d71410e448d766e52",
+                      },
+                      {
+                        title: "图标素材",
+                        href: "#3e90c5117dc0fe9d71410e448d766e52",
+                      },
+                      {
+                        title: "图标设计",
+                        href: "#3e90c5117dc0fe9d71410e448d766e52",
+                      },
+                      {
+                        title: "平面素材",
+                        href: "#3e90c5117dc0fe9d71410e448d766e52",
+                      },
+                      {
+                        title: "字体资源",
+                        href: "#3e90c5117dc0fe9d71410e448d766e52",
+                      },
+                      {
+                        title: "PPT资源",
+                        href: "#3e90c5117dc0fe9d71410e448d766e52",
+                      },
+                    ]}
+                  />
                 </li>
                 <li>
-                  <Link
-                    href="#3e90c5117dc0fe9d71410e448d766e52"
-                    className="py-4 smooth flex items-center pl-6 hover:text-red-500 text-sm"
-                  >
-                    <Wrench className="w-4 h-4 mr-2" />
-                    <span>开发设计</span>
-                    <ChevronRight className="ml-4 w-4 h-4" />
-                  </Link>
+                  <ExpandableMenu
+                    icon={<Wrench className="w-4 h-4" />}
+                    title="开发设计"
+                    subMenu={[
+                      {
+                        title: "图形创意",
+                        href: "#3e90c5117dc0fe9d71410e448d766e52",
+                      },
+                      {
+                        title: "界面设计",
+                        href: "#3e90c5117dc0fe9d71410e448d766e52",
+                      },
+                      {
+                        title: "在线配色",
+                        href: "#3e90c5117dc0fe9d71410e448d766e52",
+                      },
+                      {
+                        title: "在线工具",
+                        href: "#3e90c5117dc0fe9d71410e448d766e52",
+                      },
+                      {
+                        title: "谷歌插件",
+                        href: "#3e90c5117dc0fe9d71410e448d766e52",
+                      },
+                    ]}
+                  />
                 </li>
                 <li>
-                  <Link
-                    href="#3e90c5117dc0fe9d71410e448d766e52"
-                    className="py-4 smooth flex items-center pl-6 hover:text-red-500 text-sm"
-                  >
-                    <Pencil className="w-4 h-4 mr-2" />
-                    <span>资讯学习</span>
-                    <ChevronRight className="ml-4 w-4 h-4" />
-                  </Link>
+                  <ExpandableMenu
+                    icon={<Pencil className="w-4 h-4" />}
+                    title="资讯学习"
+                    subMenu={[
+                      {
+                        title: "资讯书籍",
+                        href: "#3e90c5117dc0fe9d71410e448d766e52",
+                      },
+                      {
+                        title: "博客论坛",
+                        href: "#3e90c5117dc0fe9d71410e448d766e52",
+                      },
+                      {
+                        title: "设计规范",
+                        href: "#3e90c5117dc0fe9d71410e448d766e52",
+                      },
+                      {
+                        title: "视频教程",
+                        href: "#3e90c5117dc0fe9d71410e448d766e52",
+                      },
+                    ]}
+                  />
                 </li>
               </ul>
             </div>

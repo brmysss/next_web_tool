@@ -16,14 +16,23 @@ const ExpandableMenu = ({ title, icon, subMenu }: ExpandableMenuProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div onClick={() => setIsOpen(!isOpen)}>
+    <div>
       <Link
         href="#3e90c5117dc0fe9d71410e448d766e52"
-        className="py-4 smooth flex items-center pl-6 hover:text-red-500 text-sm"
+        className="py-4 smooth flex items-center text-slate-600 pl-6 hover:text-red-500 text-sm"
+        onClick={() => setIsOpen(!isOpen)}
       >
         {icon}
         <span className="ml-2">{title}</span>
-        {subMenu && <ChevronRight className="ml-4 w-4 h-4" />}
+        {subMenu && (
+          <ChevronRight
+            className={`
+              ml-6 w-4 h-4
+              transition-transform duration-300 ease-in-out
+              ${isOpen ? "rotate-90" : "rotate-0"}
+            `}
+          />
+        )}
       </Link>
       {subMenu && (
         <ul
@@ -35,7 +44,7 @@ const ExpandableMenu = ({ title, icon, subMenu }: ExpandableMenuProps) => {
             <li key={index}>
               <Link
                 href="#3e90c5117dc0fe9d71410e448d766e52"
-                className="py-4 smooth flex items-center pl-6 hover:text-red-500 text-sm"
+                className="py-4 smooth flex items-center text-slate-600 pl-6 hover:text-red-500 text-sm"
               >
                 <span className="ml-6">{item.title}</span>
               </Link>
