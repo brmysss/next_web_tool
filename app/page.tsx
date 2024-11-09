@@ -20,7 +20,7 @@ export default function Home() {
 
         <div className="container mx-auto max-w-[1900px]">
           {config.map((item, index) => (
-            <SiteSection key={index} {...item} />
+            <SiteSection key={index} id={index.toString()} {...item} />
           ))}
         </div>
       </div>

@@ -3,6 +3,7 @@ import SiteCard from "./SiteCard";
 
 interface SiteSectionProps {
   title: string;
+  id: string;
   sites: {
     name: string;
     description: string;
@@ -11,11 +12,12 @@ interface SiteSectionProps {
   }[];
 }
 
-export default function SiteSection({ title, sites }: SiteSectionProps) {
+export default function SiteSection({ title, id, sites }: SiteSectionProps) {
   return (
     <div className="site-list px-4 py-4">
       {/* 分类标题 */}
-      <h4 className="text-lg font-medium mb-4 flex items-center">
+      {/* todo:给h4添加id作为锚点 */}
+      <h4 id={id} className="text-lg font-medium mb-4 flex items-center">
         <TagIcon className="w-4 h-4 mr-2" />
         {title}
       </h4>

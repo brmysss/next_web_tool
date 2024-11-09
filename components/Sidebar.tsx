@@ -63,6 +63,7 @@ export default function Sidebar() {
               <ul>
                 <li>
                   <ExpandableMenu
+                    href="#0"
                     icon={<Star className="w-4 h-4" />}
                     title="常用工具"
                   />
@@ -75,15 +76,15 @@ export default function Sidebar() {
                     subMenu={[
                       {
                         title: "生物信息",
-                        href: "#3e90c5117dc0fe9d71410e448d766e52",
+                        href: "#1",
                       },
                       {
                         title: "云服务器",
-                        href: "#3e90c5117dc0fe9d71410e448d766e52",
+                        href: "#2",
                       },
                       {
                         title: "办公学习",
-                        href: "#3e90c5117dc0fe9d71410e448d766e52",
+                        href: "#3",
                       },
                     ]}
                   />
@@ -95,11 +96,11 @@ export default function Sidebar() {
                     subMenu={[
                       {
                         title: "影音视频",
-                        href: "#3e90c5117dc0fe9d71410e448d766e52",
+                        href: "#4",
                       },
                       {
                         title: "游戏竞技",
-                        href: "#3e90c5117dc0fe9d71410e448d766e52",
+                        href: "#5",
                       },
                     ]}
                   />
@@ -111,27 +112,27 @@ export default function Sidebar() {
                     subMenu={[
                       {
                         title: "网盘资源",
-                        href: "#3e90c5117dc0fe9d71410e448d766e52",
+                        href: "#6",
                       },
                       {
                         title: "图标素材",
-                        href: "#3e90c5117dc0fe9d71410e448d766e52",
+                        href: "#7",
                       },
                       {
                         title: "图标设计",
-                        href: "#3e90c5117dc0fe9d71410e448d766e52",
+                        href: "#8",
                       },
                       {
                         title: "平面素材",
-                        href: "#3e90c5117dc0fe9d71410e448d766e52",
+                        href: "#9",
                       },
                       {
                         title: "字体资源",
-                        href: "#3e90c5117dc0fe9d71410e448d766e52",
+                        href: "#10",
                       },
                       {
                         title: "PPT资源",
-                        href: "#3e90c5117dc0fe9d71410e448d766e52",
+                        href: "#11",
                       },
                     ]}
                   />
@@ -143,23 +144,23 @@ export default function Sidebar() {
                     subMenu={[
                       {
                         title: "图形创意",
-                        href: "#3e90c5117dc0fe9d71410e448d766e52",
+                        href: "#12",
                       },
                       {
                         title: "界面设计",
-                        href: "#3e90c5117dc0fe9d71410e448d766e52",
+                        href: "#13",
                       },
                       {
                         title: "在线配色",
-                        href: "#3e90c5117dc0fe9d71410e448d766e52",
+                        href: "#14",
                       },
                       {
                         title: "在线工具",
-                        href: "#3e90c5117dc0fe9d71410e448d766e52",
+                        href: "#15",
                       },
                       {
                         title: "谷歌插件",
-                        href: "#3e90c5117dc0fe9d71410e448d766e52",
+                        href: "#16",
                       },
                     ]}
                   />
@@ -171,19 +172,19 @@ export default function Sidebar() {
                     subMenu={[
                       {
                         title: "资讯书籍",
-                        href: "#3e90c5117dc0fe9d71410e448d766e52",
+                        href: "#17",
                       },
                       {
                         title: "博客论坛",
-                        href: "#3e90c5117dc0fe9d71410e448d766e52",
+                        href: "#18",
                       },
                       {
                         title: "设计规范",
-                        href: "#3e90c5117dc0fe9d71410e448d766e52",
+                        href: "#19",
                       },
                       {
                         title: "视频教程",
-                        href: "#3e90c5117dc0fe9d71410e448d766e52",
+                        href: "#20",
                       },
                     ]}
                   />

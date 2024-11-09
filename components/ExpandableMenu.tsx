@@ -6,19 +6,25 @@ import { useState } from "react";
 interface ExpandableMenuProps {
   title: string;
   icon: React.ReactNode;
+  href?: string;
   subMenu?: {
     title: string;
     href: string;
   }[];
 }
 
-const ExpandableMenu = ({ title, icon, subMenu }: ExpandableMenuProps) => {
+const ExpandableMenu = ({
+  title,
+  icon,
+  href,
+  subMenu,
+}: ExpandableMenuProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div>
       <Link
-        href="#3e90c5117dc0fe9d71410e448d766e52"
+        href={href || subMenu?.[0].href || "#"}
         className="py-4 smooth flex items-center text-slate-600 pl-6 hover:text-red-500 text-sm"
         onClick={() => setIsOpen(!isOpen)}
       >
@@ -43,7 +49,7 @@ const ExpandableMenu = ({ title, icon, subMenu }: ExpandableMenuProps) => {
           {subMenu.map((item, index) => (
             <li key={index}>
               <Link
-                href="#3e90c5117dc0fe9d71410e448d766e52"
+                href={item.href}
                 className="py-4 smooth flex items-center text-slate-600 pl-6 hover:text-red-500 text-sm"
               >
                 <span className="ml-6">{item.title}</span>
