@@ -24,12 +24,6 @@ export default function FallbackImage({
     <Image
       src={imgSrc}
       alt={alt}
-      onLoadingComplete={(result) => {
-        if (result.naturalWidth === 0) {
-          console.error("图片加载失败");
-          setImgSrc(fallbackSrc);
-        }
-      }}
       onError={() => {
         console.error("图片加载失败");
         setImgSrc(fallbackSrc);
