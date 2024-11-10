@@ -15,6 +15,8 @@ export default function Home() {
       <Sidebar />
 
       <div className="ml-[170px] flex-1 flex flex-col grid-bg">
+        {/* 头部 */}
+        <Header />
         {/* 搜索区域 */}
         <SearchSection />
 
