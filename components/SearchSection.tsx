@@ -23,6 +23,7 @@ export default function SearchSection() {
                 className={`
                   flex-1 text-center py-3 px-4 
                   hover:text-green-500 cursor-pointer relative 
+                  transition-colors duration-200
                   ${
                     activeTab === index
                       ? "text-green-500"
