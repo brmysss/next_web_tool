@@ -20,9 +20,20 @@ export default function SearchSection() {
               <label
                 key={index}
                 htmlFor="search-text"
-                className={`flex-1 text-center py-3 px-4 hover:text-green-500 cursor-pointer relative ${
-                  activeTab === index ? "text-green-500" : ""
-                }`}
+                className={`
+                  flex-1 text-center py-3 px-4 
+                  hover:text-green-500 cursor-pointer relative 
+                  ${
+                    activeTab === index
+                      ? "text-green-500"
+                      : `after:content-[''] 
+                  after:absolute after:left-1/2 after:-translate-x-1/2 
+                  after:bottom-1 after:w-1 after:h-1 
+                  after:rounded-full after:bg-white 
+                  after:opacity-0 hover:after:opacity-100
+                  after:transition-opacity after:duration-200`
+                  }
+                `}
                 onClick={() => setActiveTab(index)}
               >
                 <span>{label}</span>
