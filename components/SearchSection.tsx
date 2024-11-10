@@ -4,6 +4,7 @@ import { useState } from "react";
 
 export default function SearchSection() {
   const [searchText, setSearchText] = useState("");
+  const [activeTab, setActiveTab] = useState(0);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -13,43 +14,29 @@ export default function SearchSection() {
   return (
     <div className="flex justify-center items-center py-20 bg-[url('/images/bg-dna.jpg')]">
       <div className="flex flex-col items-center">
-        <div className="flex text-green-500/50 w-[420px]">
-          <label
-            htmlFor="search-text"
-            className="flex-1 text-center py-2 px-4 hover:text-green-500"
-          >
-            <span>常用</span>
-          </label>
-          <label
-            htmlFor="search-engine"
-            className="flex-1 text-center py-2 px-4 hover:text-green-500"
-          >
-            <span>搜索</span>
-          </label>
-          <label
-            htmlFor="search-text"
-            className="flex-1 text-center py-2 px-4 hover:text-green-500"
-          >
-            <span>工具</span>
-          </label>
-          <label
-            htmlFor="search-engine"
-            className="flex-1 text-center py-2 px-4 hover:text-green-500"
-          >
-            <span>社区</span>
-          </label>
-          <label
-            htmlFor="search-engine"
-            className="flex-1 text-center py-2 px-4 hover:text-green-500"
-          >
-            <span>生活</span>
-          </label>
-          <label
-            htmlFor="search-engine"
-            className="flex-1 text-center py-2 px-4 hover:text-green-500"
-          >
-            <span>求职</span>
-          </label>
+        <div className="flex text-green-500/50 w-[420px] relative">
+          {["常用", "搜索", "工具", "社区", "生活", "求职"].map(
+            (label, index) => (
+              <label
+                key={index}
+                htmlFor="search-text"
+                className={`flex-1 text-center py-3 px-4 hover:text-green-500 cursor-pointer relative ${
+                  activeTab === index ? "text-green-500" : ""
+                }`}
+                onClick={() => setActiveTab(index)}
+              >
+                <span>{label}</span>
+              </label>
+            )
+          )}
+          {/* 添加底部指示器 */}
+          <div
+            className="absolute bottom-1 h-[4px] bg-white rounded-full transition-all duration-300 ease-in-out"
+            style={{
+              left: `${(100 / 6) * activeTab + (100 / 6) * 0.25}%`, // 向右偏移 1/4 标签宽度
+              width: `${(100 / 6) * 0.5}%`, // 设置为标签宽度的一半
+            }}
+          />
         </div>
         <form onSubmit={handleSubmit}>
           <input
