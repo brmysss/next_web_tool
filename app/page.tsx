@@ -3,7 +3,6 @@
 import Sidebar from "@/components/Sidebar";
 import Header from "@/components/Header";
 import SearchSection from "@/components/SearchSection";
-import SiteList from "@/components/SiteList";
 import "./page.css";
 import SiteSection from "@/components/SiteSection";
 import config from "@/config/config";
