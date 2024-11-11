@@ -1,31 +1,47 @@
 "use client";
 
+import { searchConfig } from "@/config/config";
 import { useState } from "react";
 
 export default function SearchSection() {
   const [searchText, setSearchText] = useState("");
+  const [activeTool, setActiveTool] = useState(0);
   const [activeTab, setActiveTab] = useState(0);
+  const [selectedEngines, setSelectedEngines] = useState<string[]>(
+    searchConfig[0].engines
+  );
+  const [tools, setTools] = useState(searchConfig);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log(searchText);
   };
 
+  const handleLabelClick = (id: number, engines: string[], index: number) => {
+    setTools(
+      tools.map((tool) => ({
+        ...tool,
+        isSelected: tool.id === id,
+      }))
+    );
+    setSelectedEngines(engines);
+    setActiveTab(index);
+  };
+
   return (
     <div className="flex justify-center items-center py-20 bg-[url('/images/bg-dna.jpg')]">
       <div className="flex flex-col items-center">
         <div className="flex text-green-500/50 w-[420px] relative">
-          {["常用", "搜索", "工具", "社区", "生活", "求职"].map(
-            (label, index) => (
-              <label
-                key={index}
-                htmlFor="search-text"
-                className={`
+          {tools.map(({ id, label, isSelected, engines }, index) => (
+            <label
+              key={id}
+              htmlFor="search-text"
+              className={`
                   flex-1 text-center py-3 px-4 
                   hover:text-green-500 cursor-pointer relative 
                   transition-colors duration-200
                   ${
-                    activeTab === index
+                    isSelected
                       ? "text-green-500"
                       : `after:content-[''] 
                   after:absolute after:left-1/2 after:-translate-x-1/2 
@@ -35,12 +51,11 @@ export default function SearchSection() {
                   after:transition-opacity after:duration-200`
                   }
                 `}
-                onClick={() => setActiveTab(index)}
-              >
-                <span>{label}</span>
-              </label>
-            )
-          )}
+              onClick={() => handleLabelClick(id, engines, index)}
+            >
+              <span>{label}</span>
+            </label>
+          ))}
           {/* 添加底部指示器 */}
           <div
             className="absolute bottom-1 h-[4px] bg-white rounded-full transition-all duration-300 ease-in-out"
@@ -60,11 +75,27 @@ export default function SearchSection() {
           />
         </form>
         <div>
-          <div className="text-white text-sm">
+          <div className="text-white/50 text-sm">
             <ul className="flex flex-wrap">
-              {["百度", "必应", "谷歌", "软件", "文献"].map((item, index) => (
+              {selectedEngines.map((item, index) => (
                 <li key={index} className="px-4 py-3">
-                  <label>
+                  <label
+                    className={`
+                    relative flex flex-col items-center group cursor-pointer 
+                    before:content-[''] before:absolute before:-top-2 
+                    before:left-1/2 before:-translate-x-1/2
+                    before:w-0 before:h-0 
+                    before:border-l-[8px] before:border-l-transparent
+                    before:border-r-[8px] before:border-r-transparent
+                    before:border-t-[8px] before:border-t-white
+                    ${
+                      index === activeTool
+                        ? "before:opacity-100 text-white"
+                        : "before:opacity-0"
+                    }
+                    before:transition-opacity before:duration-200`}
+                    onClick={() => setActiveTool(index)}
+                  >
                     <span>{item}</span>
                   </label>
                 </li>

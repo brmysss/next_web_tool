@@ -20,7 +20,7 @@ import siteData19 from "./sites/siteData_19.json";
 import siteData20 from "./sites/siteData_20.json";
 import siteData21 from "./sites/siteData_21.json";
 
-const config = [
+export const siteConfig = [
   siteData1,
   siteData2,
   siteData3,
@@ -43,4 +43,49 @@ const config = [
   siteData20,
   siteData21,
 ];
-export default config;
+
+export const searchConfig = [
+  {
+    id: 1,
+    label: "常用",
+    isSelected: true,
+    engines: ["百度", "必应", "谷歌", "软件", "文献"],
+  },
+  {
+    id: 2,
+    label: "搜索",
+    isSelected: false,
+    engines: ["百度", "谷歌", "360", "搜狗", "必应", "神马"],
+  },
+  {
+    id: 3,
+    label: "工具",
+    isSelected: false,
+    engines: [
+      "权重查询",
+      "友链检测",
+      "域名信息查询",
+      "PING检测",
+      "死链检测",
+      "关键词挖掘",
+    ],
+  },
+  {
+    id: 4,
+    label: "社区",
+    isSelected: false,
+    engines: ["知乎", "微信", "微博", "豆瓣"],
+  },
+  {
+    id: 5,
+    label: "生活",
+    isSelected: false,
+    engines: ["淘宝", "京东", "下厨房", "香哈菜谱", "12306", "去哪儿"],
+  },
+  {
+    id: 6,
+    label: "求职",
+    isSelected: false,
+    engines: ["智联招聘", "前程无忧", "拉勾网", "猎聘网"],
+  },
+];

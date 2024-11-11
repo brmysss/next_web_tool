@@ -5,7 +5,7 @@ import Header from "@/components/Header";
 import SearchSection from "@/components/SearchSection";
 import "./page.css";
 import SiteSection from "@/components/SiteSection";
-import config from "@/config/config";
+import { siteConfig } from "@/config/config";
 
 export default function Home() {
   return (
@@ -20,7 +20,7 @@ export default function Home() {
         <SearchSection />
 
         <div className="container mx-auto max-w-[1900px]">
-          {config.map((item, index) => (
+          {siteConfig.map((item, index) => (
             <SiteSection key={index} id={index.toString()} {...item} />
           ))}
         </div>
