@@ -59,6 +59,19 @@ export default function SearchSection() {
             onChange={(e) => setSearchText(e.target.value)}
           />
         </form>
+        <div>
+          <div className="text-white text-sm">
+            <ul className="flex flex-wrap">
+              {["百度", "必应", "谷歌", "软件", "文献"].map((item, index) => (
+                <li key={index} className="px-4 py-3">
+                  <label>
+                    <span>{item}</span>
+                  </label>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   );
