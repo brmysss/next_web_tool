@@ -19,7 +19,11 @@ export default function SearchSection() {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(searchText);
+    if (!searchText.trim()) {
+      return;
+    }
+    const searchUrl = `${selectedEngine.action}${searchText}`;
+    window.open(searchUrl, "_blank");
   };
 
   const handleLabelClick = (clickedItem: SearchType, index: number) => {
@@ -74,15 +78,20 @@ export default function SearchSection() {
             }}
           />
         </div>
-        <form onSubmit={handleSubmit} className="relative">
+        <form className="relative" onSubmit={handleSubmit}>
           <input
             className="rounded-full w-[800px] h-[50px] text-base px-5 py-2 outline-none"
             type="text"
             placeholder={selectedEngine.placeholder}
             value={searchText}
-            onChange={(e) => setSearchText(e.target.value)}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+              setSearchText(e.target.value)
+            }
           />
-          <button className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-500 focus:outline-none">
+          <button
+            type="submit"
+            className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-500 focus:outline-none"
+          >
             <Search className="h-5 w-5" />
           </button>
         </form>

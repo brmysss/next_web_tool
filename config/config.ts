@@ -51,11 +51,31 @@ export const searchConfig: SearchType[] = [
     label: "常用",
     isSelected: true,
     engines: [
-      { name: "百度", placeholder: "百度一下，你就知道" },
-      { name: "必应", placeholder: "微软 Bing 搜索" },
-      { name: "谷歌", placeholder: "谷歌搜索" },
-      { name: "软件", placeholder: "Anaconda 软件搜索" },
-      { name: "文献", placeholder: "PubMed 搜索/文章标题/关键字" },
+      {
+        name: "百度",
+        placeholder: "百度一下，你就知道",
+        action: "https://www.baidu.com/s?wd=",
+      },
+      {
+        name: "必应",
+        placeholder: "微软 Bing 搜索",
+        action: "https://cn.bing.com/search?q=",
+      },
+      {
+        name: "谷歌",
+        placeholder: "谷歌搜索",
+        action: "https://www.google.com/search?q=",
+      },
+      {
+        name: "软件",
+        placeholder: "Anaconda 软件搜索",
+        action: "https://anaconda.org/search?q=",
+      },
+      {
+        name: "文献",
+        placeholder: "PubMed 搜索/文章标题/关键字",
+        action: "https://pubmed.ncbi.nlm.nih.gov/?term=",
+      },
     ],
   },
   {
@@ -66,12 +86,33 @@ export const searchConfig: SearchType[] = [
       {
         name: "百度",
         placeholder: "百度一下，你就知道",
+        action: "https://www.baidu.com/s?wd=",
       },
-      { name: "谷歌", placeholder: "谷歌搜索" },
-      { name: "360", placeholder: "360 好搜" },
-      { name: "搜狗", placeholder: "搜狗搜索" },
-      { name: "必应", placeholder: "微软 Bing 搜索" },
-      { name: "神马", placeholder: "UC 移动端搜索" },
+      {
+        name: "谷歌",
+        placeholder: "谷歌搜索",
+        action: "https://www.google.com/search?q=",
+      },
+      {
+        name: "360",
+        placeholder: "360 好搜",
+        action: "https://www.so.com/s?q=",
+      },
+      {
+        name: "搜狗",
+        placeholder: "搜狗搜索",
+        action: "https://www.sogou.com/web?query=",
+      },
+      {
+        name: "必应",
+        placeholder: "微软 Bing 搜索",
+        action: "https://cn.bing.com/search?q=",
+      },
+      {
+        name: "神马",
+        placeholder: "UC 移动端搜索",
+        action: "https://yz.m.sm.cn/s?q=",
+      },
     ],
   },
   {
@@ -79,12 +120,36 @@ export const searchConfig: SearchType[] = [
     label: "工具",
     isSelected: false,
     engines: [
-      { name: "权重查询", placeholder: "请输入网址(不带 https://)" },
-      { name: "友链检测", placeholder: "请输入网址(不带 https://)" },
-      { name: "域名信息查询", placeholder: "请输入网址(不带 https://)" },
-      { name: "PING检测", placeholder: "请输入网址(不带 https://)" },
-      { name: "死链检测", placeholder: "请输入网址(不带https://)" },
-      { name: "关键词挖掘", placeholder: "请输入关键词" },
+      {
+        name: "权重查询",
+        placeholder: "请输入网址(不带 https://)",
+        action: "https://rank.chinaz.com/all/",
+      },
+      {
+        name: "友链检测",
+        placeholder: "请输入网址(不带 https://)",
+        action: "https://link.chinaz.com/",
+      },
+      {
+        name: "域名信息查询",
+        placeholder: "请输入网址(不带 https://)",
+        action: "https://who.is/whois/",
+      },
+      {
+        name: "PING检测",
+        placeholder: "请输入网址(不带 https://)",
+        action: "https://ping.chinaz.com/",
+      },
+      {
+        name: "死链检测",
+        placeholder: "请输入网址(不带https://)",
+        action: "https://tool.chinaz.com/Links/?DAddress=",
+      },
+      {
+        name: "关键词挖掘",
+        placeholder: "请输入关键词",
+        action: "https://www.ciku5.com/s?wd=",
+      },
     ],
   },
   {
@@ -92,10 +157,26 @@ export const searchConfig: SearchType[] = [
     label: "社区",
     isSelected: false,
     engines: [
-      { name: "知乎", placeholder: "知乎" },
-      { name: "微信", placeholder: "微信" },
-      { name: "微博", placeholder: "微博" },
-      { name: "豆瓣", placeholder: "豆瓣" },
+      {
+        name: "知乎",
+        placeholder: "知乎",
+        action: "https://www.zhihu.com/search?type=content&q=",
+      },
+      {
+        name: "微信",
+        placeholder: "微信",
+        action: "https://weixin.sogou.com/weixin?type=2&query=",
+      },
+      {
+        name: "微博",
+        placeholder: "微博",
+        action: "https://s.weibo.com/weibo/",
+      },
+      {
+        name: "豆瓣",
+        placeholder: "豆瓣",
+        action: "https://www.douban.com/search?q=",
+      },
     ],
   },
   {
@@ -103,12 +184,32 @@ export const searchConfig: SearchType[] = [
     label: "生活",
     isSelected: false,
     engines: [
-      { name: "淘宝", placeholder: "淘宝" },
-      { name: "京东", placeholder: "京东" },
-      { name: "下厨房", placeholder: "下厨房" },
-      { name: "香哈菜谱", placeholder: "香哈菜谱" },
-      { name: "12306", placeholder: "12306" },
-      { name: "去哪儿", placeholder: "去哪儿" },
+      {
+        name: "淘宝",
+        placeholder: "淘宝",
+        action: "https://s.taobao.com/search?q=",
+      },
+      {
+        name: "京东",
+        placeholder: "京东",
+        action: "https://search.jd.com/Search?keyword=",
+      },
+      {
+        name: "下厨房",
+        placeholder: "下厨房",
+        action: "https://www.xiachufang.com/search/?keyword=",
+      },
+      {
+        name: "香哈菜谱",
+        placeholder: "香哈菜谱",
+        action: "https://www.xiangha.com/so/?q=caipu&s=",
+      },
+      { name: "12306", placeholder: "12306", action: "https://www.12306.cn/?" },
+      {
+        name: "去哪儿",
+        placeholder: "去哪儿",
+        action: "https://www.qunar.com/?",
+      },
     ],
   },
   {
@@ -116,10 +217,26 @@ export const searchConfig: SearchType[] = [
     label: "求职",
     isSelected: false,
     engines: [
-      { name: "智联招聘", placeholder: "智联招聘" },
-      { name: "前程无忧", placeholder: "前程无忧" },
-      { name: "拉勾网", placeholder: "拉勾网" },
-      { name: "猎聘网", placeholder: "猎聘网" },
+      {
+        name: "智联招聘",
+        placeholder: "智联招聘",
+        action: "https://sou.zhaopin.com/jobs/searchresult.ashx?kw=",
+      },
+      {
+        name: "前程无忧",
+        placeholder: "前程无忧",
+        action: "https://we.51job.com/pc/search?keyword=",
+      },
+      {
+        name: "拉勾网",
+        placeholder: "拉勾网",
+        action: "https://www.lagou.com/jobs/list_",
+      },
+      {
+        name: "猎聘网",
+        placeholder: "猎聘网",
+        action: "https://www.liepin.com/zhaopin/?key=",
+      },
     ],
   },
 ];
