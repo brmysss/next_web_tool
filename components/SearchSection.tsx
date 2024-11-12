@@ -1,14 +1,18 @@
 "use client";
 
 import { searchConfig } from "@/config/config";
+import { Search } from "lucide-react";
 import { useState } from "react";
-
+import SearchEngine from "./SearchEngine";
+import { EngineType } from "@/types/EngineType";
 export default function SearchSection() {
   const [searchText, setSearchText] = useState("");
-  const [activeTool, setActiveTool] = useState(0);
   const [activeTab, setActiveTab] = useState(0);
-  const [selectedEngines, setSelectedEngines] = useState<string[]>(
+  const [selectedEngines, setSelectedEngines] = useState<EngineType[]>(
     searchConfig[0].engines
+  );
+  const [selectedEngine, setSelectedEngine] = useState<EngineType>(
+    searchConfig[0].engines[0]
   );
   const [tools, setTools] = useState(searchConfig);
 
@@ -17,7 +21,11 @@ export default function SearchSection() {
     console.log(searchText);
   };
 
-  const handleLabelClick = (id: number, engines: string[], index: number) => {
+  const handleLabelClick = (
+    id: number,
+    engines: EngineType[],
+    index: number
+  ) => {
     setTools(
       tools.map((tool) => ({
         ...tool,
@@ -26,6 +34,10 @@ export default function SearchSection() {
     );
     setSelectedEngines(engines);
     setActiveTab(index);
+  };
+
+  const onEngineSelected = (engine: EngineType) => {
+    setSelectedEngine(engine);
   };
 
   return (
@@ -65,44 +77,24 @@ export default function SearchSection() {
             }}
           />
         </div>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="relative">
           <input
             className="rounded-full w-[800px] h-[50px] text-xl px-5 py-2 outline-none"
             type="text"
-            placeholder="输入关键字搜索"
+            placeholder={selectedEngine.placeholder}
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
           />
+          <button className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-500 focus:outline-none">
+            <Search className="h-5 w-5" />
+          </button>
         </form>
-        <div>
-          <div className="text-white/50 text-sm">
-            <ul className="flex flex-wrap">
-              {selectedEngines.map((item, index) => (
-                <li key={index} className="px-4 py-3">
-                  <label
-                    className={`
-                    relative flex flex-col items-center group cursor-pointer 
-                    before:content-[''] before:absolute before:-top-2 
-                    before:left-1/2 before:-translate-x-1/2
-                    before:w-0 before:h-0 
-                    before:border-l-[8px] before:border-l-transparent
-                    before:border-r-[8px] before:border-r-transparent
-                    before:border-t-[8px] before:border-t-white
-                    ${
-                      index === activeTool
-                        ? "before:opacity-100 text-white"
-                        : "before:opacity-0"
-                    }
-                    before:transition-opacity before:duration-200`}
-                    onClick={() => setActiveTool(index)}
-                  >
-                    <span>{item}</span>
-                  </label>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
+        {/* 封装成一个组件，不需要activeTool, 组件里面根据传入的selectedEngines自己维护一份state, 不改变传入的selectedEngines */}
+        {/* 再传入一个回调，回调中返回placeHolder和action */}
+        <SearchEngine
+          engines={selectedEngines}
+          onEngineSelected={onEngineSelected}
+        />
       </div>
     </div>
   );

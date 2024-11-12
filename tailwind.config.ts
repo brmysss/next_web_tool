@@ -63,6 +63,9 @@ const config: Config = {
         xl: "1280px",
         "2xl": "1800px",
       },
+      rotate: {
+        135: "135deg",
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],
