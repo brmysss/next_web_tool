@@ -5,34 +5,31 @@ import { Search } from "lucide-react";
 import { useState } from "react";
 import SearchEngine from "./SearchEngine";
 import { EngineType } from "@/types/EngineType";
+import { SearchType } from "@/types/SearchType";
 export default function SearchSection() {
   const [searchText, setSearchText] = useState("");
   const [activeTab, setActiveTab] = useState(0);
-  const [selectedEngines, setSelectedEngines] = useState<EngineType[]>(
-    searchConfig[0].engines
+  const [selectedSearchType, setSelectedSearchType] = useState<SearchType>(
+    searchConfig[0]
   );
   const [selectedEngine, setSelectedEngine] = useState<EngineType>(
     searchConfig[0].engines[0]
   );
-  const [tools, setTools] = useState(searchConfig);
+  const [searchTypes, setSearchTypes] = useState(searchConfig);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log(searchText);
   };
 
-  const handleLabelClick = (
-    id: number,
-    engines: EngineType[],
-    index: number
-  ) => {
-    setTools(
-      tools.map((tool) => ({
-        ...tool,
-        isSelected: tool.id === id,
+  const handleLabelClick = (clickedItem: SearchType, index: number) => {
+    setSearchTypes(
+      searchTypes.map((item) => ({
+        ...item,
+        isSelected: item.id === clickedItem.id,
       }))
     );
-    setSelectedEngines(engines);
+    setSelectedSearchType(clickedItem);
     setActiveTab(index);
   };
 
@@ -44,16 +41,16 @@ export default function SearchSection() {
     <div className="flex justify-center items-center py-20 bg-[url('/images/bg-dna.jpg')]">
       <div className="flex flex-col items-center">
         <div className="flex text-green-500/50 w-[420px] relative">
-          {tools.map(({ id, label, isSelected, engines }, index) => (
+          {searchTypes.map((item, index) => (
             <label
-              key={id}
+              key={item.id}
               htmlFor="search-text"
               className={`
                   flex-1 text-center py-3 px-4 
                   hover:text-green-500 cursor-pointer relative 
                   transition-colors duration-200
                   ${
-                    isSelected
+                    item.isSelected
                       ? "text-green-500"
                       : `after:content-[''] 
                   after:absolute after:left-1/2 after:-translate-x-1/2 
@@ -63,9 +60,9 @@ export default function SearchSection() {
                   after:transition-opacity after:duration-200`
                   }
                 `}
-              onClick={() => handleLabelClick(id, engines, index)}
+              onClick={() => handleLabelClick(item, index)}
             >
-              <span>{label}</span>
+              <span>{item.label}</span>
             </label>
           ))}
           {/* 添加底部指示器 */}
@@ -92,7 +89,7 @@ export default function SearchSection() {
         {/* 封装成一个组件，不需要activeTool, 组件里面根据传入的selectedEngines自己维护一份state, 不改变传入的selectedEngines */}
         {/* 再传入一个回调，回调中返回placeHolder和action */}
         <SearchEngine
-          engines={selectedEngines}
+          engines={selectedSearchType.engines}
           onEngineSelected={onEngineSelected}
         />
       </div>

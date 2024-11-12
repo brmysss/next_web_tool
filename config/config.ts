@@ -19,6 +19,7 @@ import siteData18 from "./sites/siteData_18.json";
 import siteData19 from "./sites/siteData_19.json";
 import siteData20 from "./sites/siteData_20.json";
 import siteData21 from "./sites/siteData_21.json";
+import { SearchType } from "@/types/SearchType";
 
 export const siteConfig = [
   siteData1,
@@ -44,7 +45,7 @@ export const siteConfig = [
   siteData21,
 ];
 
-export const searchConfig = [
+export const searchConfig: SearchType[] = [
   {
     id: 1,
     label: "常用",
