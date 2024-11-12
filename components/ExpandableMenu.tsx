@@ -51,6 +51,7 @@ const ExpandableMenu = ({
         className="py-4 flex items-center text-slate-600 pl-6 hover:text-red-500 text-sm"
         onClick={(e) => {
           setIsOpen(!isOpen);
+          // todo: 点击的时候要把其他菜单的isOpen设置为false
           handleClick(parentHref, e);
         }}
       >
@@ -79,7 +80,7 @@ const ExpandableMenu = ({
                 onClick={(e) => handleClick(item.href, e)}
                 className="py-4 flex items-center text-slate-600 pl-6 hover:text-red-500 text-sm"
               >
-                <span className="ml-6">{item.title}</span>
+                <span className="ml-6 text-xs">{item.title}</span>
               </Link>
             </li>
           ))}

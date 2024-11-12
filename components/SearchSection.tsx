@@ -38,7 +38,7 @@ export default function SearchSection() {
   };
 
   return (
-    <div className="flex justify-center items-center py-20 bg-[url('/images/bg-dna.jpg')]">
+    <div className="flex justify-center items-center py-16 bg-[url('/images/bg-dna.jpg')]">
       <div className="flex flex-col items-center">
         <div className="flex text-green-500/50 w-[420px] relative">
           {searchTypes.map((item, index) => (
