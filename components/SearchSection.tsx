@@ -76,7 +76,7 @@ export default function SearchSection() {
         </div>
         <form onSubmit={handleSubmit} className="relative">
           <input
-            className="rounded-full w-[800px] h-[50px] text-xl px-5 py-2 outline-none"
+            className="rounded-full w-[800px] h-[50px] text-base px-5 py-2 outline-none"
             type="text"
             placeholder={selectedEngine.placeholder}
             value={searchText}
