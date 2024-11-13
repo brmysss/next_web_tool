@@ -1,5 +1,6 @@
 "use client";
 
+import { useSettings } from "@/hooks/use-settings";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
@@ -26,6 +27,7 @@ const ExpandableMenu = ({
   onMenuClicked,
 }: ExpandableMenuProps) => {
   const parentHref = href || subMenu?.[0].href || "#";
+  const { isCollapsed } = useSettings();
 
   const handleClick = (
     href: string,
@@ -60,8 +62,8 @@ const ExpandableMenu = ({
         }}
       >
         {icon}
-        <span className="ml-2 text-xs">{title}</span>
-        {subMenu && (
+        {!isCollapsed && <span className="ml-2 text-xs">{title}</span>}
+        {!isCollapsed && subMenu && (
           <ChevronRight
             className={`
               ml-6 w-4 h-4
@@ -71,7 +73,7 @@ const ExpandableMenu = ({
           />
         )}
       </Link>
-      {subMenu && (
+      {!isCollapsed && subMenu && (
         <ul
           className={`${
             isOpen ? "max-h-96" : "max-h-0"

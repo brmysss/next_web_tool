@@ -1,5 +1,6 @@
 "use client";
 
+import { useSettings } from "@/hooks/use-settings";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
@@ -10,6 +11,7 @@ export interface MenuProps {
 }
 
 const Menu = ({ title, icon, href }: MenuProps) => {
+  const { isCollapsed } = useSettings();
   return (
     <div>
       <Link
@@ -17,7 +19,7 @@ const Menu = ({ title, icon, href }: MenuProps) => {
         className="py-4 flex items-center text-slate-600 pl-6 hover:text-red-500 text-sm"
       >
         {icon}
-        <span className="ml-2 text-xs">{title}</span>
+        {!isCollapsed && <span className="ml-2 text-xs">{title}</span>}
       </Link>
     </div>
   );

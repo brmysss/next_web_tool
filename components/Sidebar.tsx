@@ -6,13 +6,13 @@ import Link from "next/link";
 import ExpandableMenu from "./ExpandableMenu";
 import { topMenuList, bottomMenuList } from "@/config/menuConfig";
 import Menu from "./Menu";
+import { useSettings } from "@/hooks/use-settings";
 
 export default function Sidebar() {
-  const [isCollapsed, setIsCollapsed] = useState(false);
   const [topMenus, setTopMenus] = useState(topMenuList);
+  const { isCollapsed } = useSettings();
 
   const handleMenuClicked = (id: number, isOpen: boolean) => {
-    setIsCollapsed(false);
     // 点击的时候要把其他菜单的isOpen设置为false
     setTopMenus(
       topMenus.map((item) => ({
@@ -23,11 +23,15 @@ export default function Sidebar() {
   };
 
   return (
-    <div className="fixed left-0 top-0 h-screen fade animate-nav w-[170px] bg-white">
+    <div
+      className={`fixed left-0 top-0 h-screen fade animate-nav  bg-white ${
+        isCollapsed ? "w-[60px]" : "w-[170px]"
+      } `}
+    >
       <div className="h-full flex flex-col">
         {/* Logo区域 */}
-        <div className="sidebar-logo py-6 flex items-center pl-4">
-          <Link href="/" className="logo-expanded">
+        <div className="sidebar-logo py-6 flex items-center pl-2">
+          <Link href="/" className={isCollapsed ? "hidden" : ""}>
             <Image
               src="/images/bt8-expand-light.png"
               height={40}
@@ -43,7 +47,7 @@ export default function Sidebar() {
               className="logo-dark hidden"
             />
           </Link>
-          <Link href="/" className="logo-collapsed hidden">
+          <Link href="/" className={isCollapsed ? "" : "hidden"}>
             <Image
               src="/images/bt.png"
               height={40}

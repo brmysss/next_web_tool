@@ -6,14 +6,22 @@ import SearchSection from "@/components/SearchSection";
 import "./page.css";
 import SiteSection from "@/components/SiteSection";
 import { siteConfig } from "@/config/config";
+import { useState } from "react";
+import { useSettings } from "@/hooks/use-settings";
 
 export default function Home() {
+  const { isCollapsed } = useSettings();
+
   return (
     <div className="min-h-screen flex">
       {/* 侧边栏 */}
       <Sidebar />
 
-      <div className="ml-[170px] flex-1 flex flex-col grid-bg">
+      <div
+        className={`${
+          isCollapsed ? "ml-[60px]" : "ml-[170px]"
+        } flex-1 flex flex-col grid-bg`}
+      >
         {/* 头部 */}
         <Header />
         {/* 搜索区域 */}
