@@ -81,7 +81,7 @@ export default function Sidebar() {
           <div>
             <ul>
               {bottomMenuList.map((item) => (
-                <Menu key={item.id} {...item} />
+                <ExpandableMenu key={item.id} {...item} />
               ))}
             </ul>
           </div>

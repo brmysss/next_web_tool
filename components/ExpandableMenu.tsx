@@ -15,6 +15,7 @@ export interface ExpandableMenuProps {
     href: string;
   }[];
   onMenuClicked?: (id: number, isOpen: boolean) => void;
+  target?: string;
 }
 
 const ExpandableMenu = ({
@@ -25,6 +26,7 @@ const ExpandableMenu = ({
   isOpen,
   subMenu,
   onMenuClicked,
+  target,
 }: ExpandableMenuProps) => {
   const parentHref = href || subMenu?.[0].href || "#";
   const { isCollapsed } = useSettings();
@@ -54,6 +56,7 @@ const ExpandableMenu = ({
   return (
     <div>
       <Link
+        target={target || "_self"}
         href={parentHref}
         className="py-4 flex items-center text-slate-600 pl-6 hover:text-red-500 text-sm"
         onClick={(e) => {

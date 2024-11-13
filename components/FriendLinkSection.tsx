@@ -3,7 +3,10 @@ import { BookmarkMinus, TagIcon } from "lucide-react";
 const FriendLinkSection = () => {
   return (
     <div className="px-4 py-4">
-      <h4 className="text-lg font-medium mb-4 flex items-center">
+      <h4
+        id="friendlink"
+        className="text-lg font-medium mb-4 flex items-center"
+      >
         <BookmarkMinus className="w-4 h-4 mr-2 -rotate-90" />
         友情链接
       </h4>

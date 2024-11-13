@@ -145,18 +145,20 @@ export const bottomMenuList = [
     id: 1,
     title: "网站提交",
     icon: <FileUp className="w-4 h-4" />,
-    href: "#",
+    href: "/submit",
+    target: "_blank",
   },
   {
     id: 2,
     title: "友情链接",
     icon: <Link className="w-4 h-4" />,
-    href: "#",
+    href: "#friendlink",
   },
   {
     id: 3,
     title: "关于导航",
     icon: <Info className="w-4 h-4" />,
-    href: "#",
+    href: "/about",
+    target: "_blank",
   },
 ];
