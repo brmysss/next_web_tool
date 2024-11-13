@@ -4,6 +4,8 @@
 主要用来练习前端同时生成一个导航站供自己使用
 原网站在线预览：
 <https://geeeeeeeek.github.io/web_tool/>
+当前项目在线预览：
+<https://next-web-tool.vercel.app/>
 
 ## 技术栈
 
