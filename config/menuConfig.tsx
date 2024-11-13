@@ -1,13 +1,16 @@
 import {
+  FileUp,
   Film,
   FlaskConical,
   FolderOpen,
+  Info,
+  Link,
   Pencil,
   Star,
   Wrench,
 } from "lucide-react";
 
-export const menuConfig = [
+export const topMenuList = [
   {
     id: 1,
     title: "常用工具",
@@ -134,5 +137,26 @@ export const menuConfig = [
         href: "#20",
       },
     ],
+  },
+];
+
+export const bottomMenuList = [
+  {
+    id: 1,
+    title: "网站提交",
+    icon: <FileUp className="w-4 h-4" />,
+    href: "#",
+  },
+  {
+    id: 2,
+    title: "友情链接",
+    icon: <Link className="w-4 h-4" />,
+    href: "#",
+  },
+  {
+    id: 3,
+    title: "关于导航",
+    icon: <Info className="w-4 h-4" />,
+    href: "#",
   },
 ];

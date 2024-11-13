@@ -4,17 +4,18 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import ExpandableMenu from "./ExpandableMenu";
-import { menuConfig } from "@/config/menuConfig";
+import { topMenuList, bottomMenuList } from "@/config/menuConfig";
+import Menu from "./Menu";
 
 export default function Sidebar() {
   const [isCollapsed, setIsCollapsed] = useState(false);
-  const [menus, setMenus] = useState(menuConfig);
+  const [topMenus, setTopMenus] = useState(topMenuList);
 
   const handleMenuClicked = (id: number, isOpen: boolean) => {
     setIsCollapsed(false);
     // 点击的时候要把其他菜单的isOpen设置为false
-    setMenus(
-      menus.map((item) => ({
+    setTopMenus(
+      topMenus.map((item) => ({
         ...item,
         isOpen: item.id === id ? isOpen : false,
       }))
@@ -23,7 +24,7 @@ export default function Sidebar() {
 
   return (
     <div className="fixed left-0 top-0 h-screen fade animate-nav w-[170px] bg-white">
-      <div className="modal-dialog h-full sidebar-nav-inner">
+      <div className="h-full flex flex-col">
         {/* Logo区域 */}
         <div className="sidebar-logo py-6 flex items-center pl-4">
           <Link href="/" className="logo-expanded">
@@ -61,19 +62,24 @@ export default function Sidebar() {
         </div>
 
         {/* 菜单区域 */}
-        <div className="sidebar-menu flex-1">
-          <div className="sidebar-scroll">
-            <div className="sidebar-menu-inner">
-              <ul>
-                {menus.map((item) => (
-                  <ExpandableMenu
-                    key={item.id}
-                    {...item}
-                    onMenuClicked={handleMenuClicked}
-                  />
-                ))}
-              </ul>
-            </div>
+        <div className="flex-1 flex flex-col justify-between">
+          <div>
+            <ul>
+              {topMenus.map((item) => (
+                <ExpandableMenu
+                  key={item.id}
+                  {...item}
+                  onMenuClicked={handleMenuClicked}
+                />
+              ))}
+            </ul>
+          </div>
+          <div>
+            <ul>
+              {bottomMenuList.map((item) => (
+                <Menu key={item.id} {...item} />
+              ))}
+            </ul>
           </div>
         </div>
       </div>
