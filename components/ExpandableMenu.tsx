@@ -3,24 +3,29 @@
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
-interface ExpandableMenuProps {
+export interface ExpandableMenuProps {
+  id: number;
   title: string;
   icon: React.ReactNode;
   href?: string;
+  isOpen?: boolean;
   subMenu?: {
     title: string;
     href: string;
   }[];
+  onMenuClicked: (id: number, isOpen: boolean) => void;
 }
 
 const ExpandableMenu = ({
+  id,
   title,
   icon,
   href,
+  isOpen,
   subMenu,
+  onMenuClicked,
 }: ExpandableMenuProps) => {
   const parentHref = href || subMenu?.[0].href || "#";
-  const [isOpen, setIsOpen] = useState(false);
 
   const handleClick = (
     href: string,
@@ -50,8 +55,7 @@ const ExpandableMenu = ({
         href={parentHref}
         className="py-4 flex items-center text-slate-600 pl-6 hover:text-red-500 text-sm"
         onClick={(e) => {
-          setIsOpen(!isOpen);
-          // todo: 点击的时候要把其他菜单的isOpen设置为false
+          onMenuClicked(id, !isOpen);
           handleClick(parentHref, e);
         }}
       >
