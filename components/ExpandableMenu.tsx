@@ -14,7 +14,7 @@ export interface ExpandableMenuProps {
     title: string;
     href: string;
   }[];
-  onMenuClicked: (id: number, isOpen: boolean) => void;
+  onMenuClicked?: (id: number, isOpen: boolean) => void;
 }
 
 const ExpandableMenu = ({
@@ -57,7 +57,7 @@ const ExpandableMenu = ({
         href={parentHref}
         className="py-4 flex items-center text-slate-600 pl-6 hover:text-red-500 text-sm"
         onClick={(e) => {
-          onMenuClicked(id, !isOpen);
+          onMenuClicked?.(id, !isOpen);
           handleClick(parentHref, e);
         }}
       >

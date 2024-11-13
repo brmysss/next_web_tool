@@ -8,6 +8,8 @@ import SiteSection from "@/components/SiteSection";
 import { siteConfig } from "@/config/config";
 import { useState } from "react";
 import { useSettings } from "@/hooks/use-settings";
+import FriendLinkSection from "@/components/FriendLinkSection";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   const { isCollapsed } = useSettings();
@@ -31,7 +33,11 @@ export default function Home() {
           {siteConfig.map((item, index) => (
             <SiteSection key={index} id={index.toString()} {...item} />
           ))}
+          {/* 友情链接 */}
+          <FriendLinkSection />
         </div>
+        {/* 底部 */}
+        <Footer />
       </div>
     </div>
   );
