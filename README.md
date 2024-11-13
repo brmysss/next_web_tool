@@ -14,6 +14,7 @@
 - TypeScript
 - shadcn/ui
 - zustand
+- lucide-react
 
 ## 待完善
 
