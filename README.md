@@ -1,10 +1,10 @@
 # 在线工具箱导航站
 
-使用 next.js+cursor 复刻[web_tool](https://github.com/geeeeeeeek/web_tool)
-主要用来练习前端同时生成一个导航站供自己使用
-原网站在线预览：
-<https://geeeeeeeek.github.io/web_tool/>
-当前项目在线预览：
+使用 next.js+cursor 复刻[web_tool](https://github.com/geeeeeeeek/web_tool)  
+主要用来练习前端同时生成一个导航站供自己使用  
+原网站在线预览：  
+<https://geeeeeeeek.github.io/web_tool/>  
+当前项目在线预览：  
 <https://next-web-tool.vercel.app/>
 
 ## 技术栈
