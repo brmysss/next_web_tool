@@ -23,26 +23,27 @@ export default function Header() {
         isScrolled ? "bg-white/70 backdrop-blur-sm text-gray-700" : "text-white"
       }`}
     >
-      <div className="flex items-center h-16 gap-4 pl-2">
-        {/* 菜单图标 */}
-        <button
-          className="p-2 hover:text-red-500"
-          onClick={() => setIsCollapsed(!isCollapsed)}
-        >
-          {isCollapsed ? (
-            <Menu className="w-6 h-6" />
-          ) : (
-            <ChevronsLeft className="w-6 h-6" />
-          )}
-        </button>
-        <button className="p-2 flex items-center hover:text-red-500">
-          <Home className="w-6 h-6" />
-          <span className="text-sm">首页</span>
-        </button>
-        <button className="p-2 flex items-center hover:text-red-500">
-          <BookText className="w-6 h-6" />
-          <span className="text-sm">关于</span>
-        </button>
+      <div className="flex">
+        <div className="items-center h-16 gap-4 pl-2 hidden md:flex">
+          <button
+            className="p-2 hover:text-red-500"
+            onClick={() => setIsCollapsed(!isCollapsed)}
+          >
+            {isCollapsed ? (
+              <Menu className="w-6 h-6" />
+            ) : (
+              <ChevronsLeft className="w-6 h-6" />
+            )}
+          </button>
+          <button className="p-2 flex items-center hover:text-red-500">
+            <Home className="w-6 h-6" />
+            <span className="text-sm">首页</span>
+          </button>
+          <button className="p-2 flex items-center hover:text-red-500">
+            <BookText className="w-6 h-6" />
+            <span className="text-sm">关于</span>
+          </button>
+        </div>
       </div>
     </header>
   );

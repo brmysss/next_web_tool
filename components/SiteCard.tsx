@@ -47,7 +47,7 @@ export default function SiteCard({
                   <p className="font-bold text-sm group-hover:text-red-500 transition-colors duration-200">
                     {name}
                   </p>
-                  <p className="text-xs font-normal text-gray-500 overflow-hidden text-ellipsis whitespace-nowrap block">
+                  <p className="text-[10.5px] font-normal text-gray-500 overflow-hidden text-ellipsis whitespace-nowrap block">
                     {description}
                   </p>
                 </div>
