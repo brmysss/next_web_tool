@@ -43,14 +43,14 @@ export default function SearchSection() {
 
   return (
     <div className="flex justify-center items-center py-16 bg-[url('/images/bg-dna.jpg')]">
-      <div className="flex flex-col items-center">
-        <div className="flex text-green-500/50 w-[420px] relative">
+      <div className="flex flex-col items-center w-full px-2">
+        <div className="flex text-green-500/50 w-full md:w-[420px] relative">
           {searchTypes.map((item, index) => (
             <label
               key={item.id}
               htmlFor="search-text"
               className={`
-                  flex-1 text-center py-3 px-4 
+                  flex-1 text-center py-3 md:px-4 
                   hover:text-green-500 cursor-pointer relative 
                   transition-colors duration-200
                   ${
@@ -78,9 +78,12 @@ export default function SearchSection() {
             }}
           />
         </div>
-        <form className="relative" onSubmit={handleSubmit}>
+        <form
+          className="relative w-full flex md:w-[800px] justify-center"
+          onSubmit={handleSubmit}
+        >
           <input
-            className="rounded-full w-[800px] h-[50px] text-base px-5 py-2 outline-none"
+            className="rounded-full w-full h-[50px] text-base px-5 py-2 outline-none"
             type="text"
             placeholder={selectedEngine.placeholder}
             value={searchText}

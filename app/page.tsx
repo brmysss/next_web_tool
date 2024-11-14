@@ -15,14 +15,14 @@ export default function Home() {
   const { isCollapsed } = useSettings();
 
   return (
-    <div className="min-h-screen flex">
+    <div className="min-h-screen flex overflow-x-hidden">
       {/* 侧边栏 */}
       <Sidebar />
 
       <div
         className={`${
-          isCollapsed ? "ml-[60px]" : "ml-[170px]"
-        } flex-1 flex flex-col grid-bg`}
+          isCollapsed ? "md:ml-[60px]" : "md:ml-[170px]"
+        } ml-0 flex-1 flex flex-col grid-bg`}
       >
         {/* 头部 */}
         <Header />

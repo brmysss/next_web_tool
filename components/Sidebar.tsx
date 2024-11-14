@@ -24,7 +24,7 @@ export default function Sidebar() {
 
   return (
     <div
-      className={`fixed left-0 top-0 h-screen fade animate-nav  bg-white ${
+      className={`fixed left-0 top-0 h-screen fade animate-nav bg-white hidden md:block ${
         isCollapsed ? "w-[60px]" : "w-[170px]"
       } `}
     >
