@@ -44,7 +44,7 @@ export default function SiteCard({
                   height={40}
                 />
                 <div className="flex flex-col justify-center flex-1 min-w-0">
-                  <p className="font-bold text-sm group-hover:text-red-500 transition-colors duration-200">
+                  <p className="font-bold text-sm group-hover:text-red-500 transition-colors duration-200 overflow-hidden text-ellipsis whitespace-nowrap">
                     {name}
                   </p>
                   <p className="text-[10.5px] font-normal text-gray-500 overflow-hidden text-ellipsis whitespace-nowrap block">
