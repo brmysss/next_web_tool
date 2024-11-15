@@ -1,8 +1,10 @@
 "use client";
 
 import { useSettings } from "@/hooks/use-settings";
-import { BookText, ChevronsLeft, Home, Info, Menu } from "lucide-react";
+import { BookText, ChevronsLeft, Home, Info, Menu, Search } from "lucide-react";
 import { useEffect, useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -17,16 +19,16 @@ export default function Header() {
   }, []);
   return (
     <header
-      className={`w-full fixed top-0 left-[${
-        isCollapsed ? "60px" : "170px"
-      }] h-[74px] z-50 transition-colors duration-300 ${
+      className={`fixed top-0 ${
+        isCollapsed ? "md:left-[60px]" : "md:left-[170px]"
+      } left-0 right-0 h-[74px] z-50 transition-colors duration-300 ${
         isScrolled ? "bg-white/70 backdrop-blur-sm text-gray-700" : "text-white"
       }`}
     >
-      <div className="flex">
-        <div className="items-center h-16 gap-4 pl-2 hidden md:flex">
+      <div className="flex justify-between">
+        <div className="items-center h-16 gap-4 pl-2 flex">
           <button
-            className="p-2 hover:text-red-500"
+            className="p-2 hover:text-red-500 hidden md:flex"
             onClick={() => setIsCollapsed(!isCollapsed)}
           >
             {isCollapsed ? (
@@ -35,13 +37,40 @@ export default function Header() {
               <ChevronsLeft className="w-6 h-6" />
             )}
           </button>
-          <button className="p-2 flex items-center hover:text-red-500">
+          <button className="p-2 items-center hover:text-red-500 hidden md:flex">
             <Home className="w-6 h-6" />
             <span className="text-sm">首页</span>
           </button>
-          <button className="p-2 flex items-center hover:text-red-500">
+          <button className="p-2 items-center hover:text-red-500 hidden md:flex">
             <BookText className="w-6 h-6" />
             <span className="text-sm">关于</span>
+          </button>
+
+          {/* 移动端时显示 */}
+          <Link href="/" className="md:hidden">
+            <Image
+              src="/images/bt.png"
+              height={40}
+              width={44}
+              alt="在线工具网"
+              className="logo-light"
+            />
+            <Image
+              src="/images/bt.png"
+              height={40}
+              width={44}
+              alt="在线工具网"
+              className="logo-dark hidden"
+            />
+          </Link>
+        </div>
+
+        <div className="items-center h-16 gap-1 flex">
+          <button className="p-2 flex items-center hover:text-red-500">
+            <Search className="w-6 h-6" />
+          </button>
+          <button className="p-2 flex items-center hover:text-red-500 md:hidden">
+            <Menu className="w-6 h-6" />
           </button>
         </div>
       </div>
