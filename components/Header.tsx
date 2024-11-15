@@ -69,7 +69,10 @@ export default function Header() {
           <button className="p-2 flex items-center hover:text-red-500">
             <Search className="w-6 h-6" />
           </button>
-          <button className="p-2 flex items-center hover:text-red-500 md:hidden">
+          <button
+            className="p-2 flex items-center hover:text-red-500 md:hidden"
+            onClick={() => setIsCollapsed(!isCollapsed)}
+          >
             <Menu className="w-6 h-6" />
           </button>
         </div>

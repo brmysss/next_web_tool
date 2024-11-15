@@ -24,9 +24,9 @@ export default function Sidebar() {
 
   return (
     <div
-      className={`fixed left-0 top-0 h-screen fade animate-nav bg-white hidden md:block ${
-        isCollapsed ? "w-[60px]" : "w-[170px]"
-      } `}
+      className={`fixed left-0 top-0 h-screen fade animate-nav bg-white ${
+        isCollapsed ? "w-0 md:w-[60px]" : "w-[170px]"
+      } z-[1090]`}
     >
       <div className="h-full flex flex-col">
         {/* Logo区域 */}
