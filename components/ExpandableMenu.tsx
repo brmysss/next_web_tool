@@ -65,22 +65,27 @@ const ExpandableMenu = ({
         }}
       >
         {icon}
-        {!isCollapsed && <span className="ml-2 text-xs">{title}</span>}
-        {!isCollapsed && subMenu && (
+        <span className={`${isCollapsed ? "hidden" : "block"} ml-2 text-xs`}>
+          {title}
+        </span>
+        {subMenu && (
           <ChevronRight
             className={`
               ml-6 w-4 h-4
               transition-transform duration-300 ease-in-out
               ${isOpen ? "rotate-90" : "rotate-0"}
+              ${isCollapsed ? "hidden" : "block"}
             `}
           />
         )}
       </Link>
-      {!isCollapsed && subMenu && (
+      {subMenu && (
         <ul
           className={`${
             isOpen ? "max-h-96" : "max-h-0"
-          } overflow-hidden transition-all duration-300 ease-in-out`}
+          } overflow-hidden transition-all duration-300 ease-in-out ${
+            isCollapsed ? "hidden" : "block"
+          }`}
         >
           {subMenu.map((item, index) => (
             <li key={index}>

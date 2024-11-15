@@ -24,8 +24,10 @@ export default function Sidebar() {
 
   return (
     <div
-      className={`fixed left-0 top-0 h-screen fade animate-nav bg-white ${
-        isCollapsed ? "w-0 md:w-[60px]" : "w-[170px]"
+      className={`fixed left-0 top-0 h-screen bg-white transform transition-transform duration-150 w-[170px] ${
+        isCollapsed
+          ? "md:w-[60px] -translate-x-full md:translate-x-0"
+          : "translate-x-0"
       } z-[1090]`}
     >
       <div className="h-full flex flex-col">
