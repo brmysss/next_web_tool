@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <div className="text-center py-4 text-xs">
+    <div className="text-center py-4 text-xs px-4">
       <p>
         本站内容源自互联网，如有内容侵犯了你的权益，请联系删除相关内容，联系邮箱：zfyoung799699@gmail.com
       </p>
