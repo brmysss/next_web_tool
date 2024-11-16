@@ -3,7 +3,7 @@
 import { useSettings } from "@/hooks/use-settings";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
-import { useState } from "react";
+import { useMediaQuery } from "usehooks-ts";
 export interface ExpandableMenuProps {
   id: number;
   title: string;
@@ -29,11 +29,13 @@ const ExpandableMenu = ({
   target,
 }: ExpandableMenuProps) => {
   const parentHref = href || subMenu?.[0].href || "#";
-  const { isCollapsed } = useSettings();
+  const { isCollapsed, setIsCollapsed } = useSettings();
+  const isMobile = useMediaQuery("(max-width: 768px)");
 
   const handleClick = (
     href: string,
-    e: React.MouseEvent<HTMLAnchorElement>
+    e: React.MouseEvent<HTMLAnchorElement>,
+    isSubMenu: boolean
   ) => {
     if (href?.startsWith("#")) {
       e.preventDefault();
@@ -50,6 +52,9 @@ const ExpandableMenu = ({
       }
       // 手动更新url
       window.history.pushState({}, "", href);
+      if (isMobile && isSubMenu) {
+        setIsCollapsed(true);
+      }
     }
   };
 
@@ -61,7 +66,7 @@ const ExpandableMenu = ({
         className="py-4 flex items-center text-slate-600 pl-6 hover:text-red-500 text-sm"
         onClick={(e) => {
           onMenuClicked?.(id, !isOpen);
-          handleClick(parentHref, e);
+          handleClick(parentHref, e, false);
         }}
       >
         {icon}
@@ -91,7 +96,7 @@ const ExpandableMenu = ({
             <li key={index}>
               <Link
                 href={item.href}
-                onClick={(e) => handleClick(item.href, e)}
+                onClick={(e) => handleClick(item.href, e, true)}
                 className="py-4 flex items-center text-slate-600 pl-6 hover:text-red-500 text-sm"
               >
                 <span className="ml-6 text-xs">{item.title}</span>

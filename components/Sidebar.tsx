@@ -73,27 +73,25 @@ export default function Sidebar() {
             />
           </Link>
         </div>
-
-        {/* 菜单区域 */}
-        <div className="flex-1 flex flex-col justify-between">
-          <div>
-            <ul>
-              {topMenus.map((item) => (
-                <ExpandableMenu
-                  key={item.id}
-                  {...item}
-                  onMenuClicked={handleMenuClicked}
-                />
-              ))}
-            </ul>
-          </div>
-          <div>
-            <ul>
-              {bottomMenuList.map((item) => (
-                <ExpandableMenu key={item.id} {...item} />
-              ))}
-            </ul>
-          </div>
+        {/* 中间菜单 */}
+        <div className="flex-1 overflow-y-auto touch-pan-y">
+          <ul className="h-full">
+            {topMenus.map((item) => (
+              <ExpandableMenu
+                key={item.id}
+                {...item}
+                onMenuClicked={handleMenuClicked}
+              />
+            ))}
+          </ul>
+        </div>
+        {/* 底部菜单 */}
+        <div className="py-2">
+          <ul>
+            {bottomMenuList.map((item) => (
+              <ExpandableMenu key={item.id} {...item} />
+            ))}
+          </ul>
         </div>
       </div>
     </div>
