@@ -10,15 +10,16 @@ import { useEffect, useState } from "react";
 import { useSettings } from "@/hooks/use-settings";
 import FriendLinkSection from "@/components/FriendLinkSection";
 import Footer from "@/components/Footer";
+import { useMediaQuery } from "usehooks-ts";
 
 export default function Home() {
   const { isCollapsed, setIsCollapsed } = useSettings();
-
+  const isMobile = useMediaQuery("(max-width: 768px)");
   useEffect(() => {
-    if (isCollapsed) {
-      document.body.style.overflow = "unset";
-    } else {
+    if (!isCollapsed && isMobile) {
       document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
     }
 
     // 清理函数
