@@ -1,16 +1,23 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import ExpandableMenu from "./ExpandableMenu";
 import { topMenuList, bottomMenuList } from "@/config/menuConfig";
-import Menu from "./Menu";
+import { useMediaQuery } from "usehooks-ts";
 import { useSettings } from "@/hooks/use-settings";
 
 export default function Sidebar() {
   const [topMenus, setTopMenus] = useState(topMenuList);
-  const { isCollapsed } = useSettings();
+  const { isCollapsed, setIsCollapsed } = useSettings();
+  const isMobile = useMediaQuery("(max-width: 768px)");
+
+  useEffect(() => {
+    if (isMobile) {
+      setIsCollapsed(true);
+    }
+  }, [isMobile]);
 
   const handleMenuClicked = (id: number, isOpen: boolean) => {
     // 点击的时候要把其他菜单的isOpen设置为false
@@ -24,11 +31,11 @@ export default function Sidebar() {
 
   return (
     <div
-      className={`fixed left-0 top-0 h-screen bg-white transform transition-transform duration-150 w-[170px] ${
+      className={`fixed left-0 top-0 h-screen bg-white transition-transform duration-150 ease-in-out w-[170px] z-[1090] ${
         isCollapsed
           ? "md:w-[60px] -translate-x-full md:translate-x-0"
           : "translate-x-0"
-      } z-[1090]`}
+      }`}
     >
       <div className="h-full flex flex-col">
         {/* Logo区域 */}
