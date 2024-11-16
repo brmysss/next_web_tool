@@ -69,9 +69,9 @@ export default function SiteCard({
             </div>
           </a>
         </TooltipTrigger>
-        <TooltipContent side="bottom">
+        <TooltipContent side="bottom" className="max-w-[200px]">
           <TooltipArrow />
-          <p>{description}</p>
+          <p className="whitespace-normal break-words">{description}</p>
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>
