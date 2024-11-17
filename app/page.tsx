@@ -13,10 +13,11 @@ import Footer from "@/components/Footer";
 import { useMediaQuery } from "usehooks-ts";
 
 export default function Home() {
-  const { isCollapsed, setIsCollapsed } = useSettings();
+  const { isCollapsed, isMobileMenuOpen, setIsCollapsed, setIsMobileMenuOpen } =
+    useSettings();
   const isMobile = useMediaQuery("(max-width: 768px)");
   useEffect(() => {
-    if (!isCollapsed && isMobile) {
+    if (isMobileMenuOpen && isMobile) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "unset";
@@ -26,7 +27,11 @@ export default function Home() {
     return () => {
       document.body.style.overflow = "unset";
     };
-  }, [isCollapsed]);
+  }, [isMobileMenuOpen]);
+
+  useEffect(() => {
+    setIsCollapsed(false);
+  }, [isMobile]);
 
   return (
     <div className="min-h-screen flex overflow-x-hidden">
@@ -54,9 +59,9 @@ export default function Home() {
         <Footer />
         {/* 移动端侧边栏出来时显示半透明遮罩 */}
         <div
-          onClick={() => setIsCollapsed(true)}
+          onClick={() => setIsMobileMenuOpen(false)}
           className={`fixed inset-0 bg-black/50 backdrop-blur-sm z-[1089] md:hidden ${
-            isCollapsed ? "hidden pointer-events-none" : "block"
+            isMobileMenuOpen ? "block" : "hidden pointer-events-none"
           }`}
         />
       </div>

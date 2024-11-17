@@ -29,7 +29,7 @@ const ExpandableMenu = ({
   target,
 }: ExpandableMenuProps) => {
   const parentHref = href || subMenu?.[0].href || "#";
-  const { isCollapsed, setIsCollapsed } = useSettings();
+  const { isCollapsed, setIsMobileMenuOpen } = useSettings();
   const isMobile = useMediaQuery("(max-width: 768px)");
 
   const handleClick = (
@@ -53,7 +53,7 @@ const ExpandableMenu = ({
       // 手动更新url
       window.history.pushState({}, "", href);
       if (isMobile && isSubMenu) {
-        setIsCollapsed(true);
+        setIsMobileMenuOpen(false);
       }
     }
   };

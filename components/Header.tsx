@@ -8,7 +8,8 @@ import Link from "next/link";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
-  const { isCollapsed, setIsCollapsed } = useSettings();
+  const { isCollapsed, setIsCollapsed, isMobileMenuOpen, setIsMobileMenuOpen } =
+    useSettings();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -71,7 +72,7 @@ export default function Header() {
           </button>
           <button
             className="p-2 flex items-center md:hover:text-red-500 md:hidden"
-            onClick={() => setIsCollapsed(false)}
+            onClick={() => setIsMobileMenuOpen(true)}
           >
             <Menu className="w-6 h-6" />
           </button>
