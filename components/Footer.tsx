@@ -21,7 +21,7 @@ const Footer = () => {
           rel="noopener noreferrer"
           className="text-blue-500 hover:text-red-500"
         >
-          京ICP备2023018588号
+          浙ICP备2023005735号
         </a>
       </p>
     </div>
