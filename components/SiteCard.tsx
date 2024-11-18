@@ -44,7 +44,7 @@ export default function SiteCard({
                   height={40}
                 />
                 <div className="flex flex-col justify-center flex-1 min-w-0">
-                  <p className="font-bold text-sm group-hover:text-red-500 dark:group-hover:text-white dark:text-white/50 transition-colors duration-200 overflow-hidden text-ellipsis whitespace-nowrap">
+                  <p className="font-bold text-sm group-hover:text-red-500 dark:group-hover:text-white dark:text-white/80 transition-colors duration-200 overflow-hidden text-ellipsis whitespace-nowrap">
                     {name}
                   </p>
                   <p className="text-[10.5px] font-normal text-gray-500 overflow-hidden text-ellipsis whitespace-nowrap block">
@@ -56,7 +56,7 @@ export default function SiteCard({
                 <Tooltip>
                   <TooltipTrigger asChild>
                     <CircleChevronRight
-                      className="w-4 h-4 text-gray-200 transition-colors duration-200 group-hover:text-gray-400"
+                      className="w-4 h-4 text-gray-200 dark:text-gray-500 transition-colors duration-200 group-hover:text-gray-400 dark:group-hover:text-gray-300"
                       onMouseLeave={() => setIsBottomTooltipOpen(true)}
                     />
                   </TooltipTrigger>
