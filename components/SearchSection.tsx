@@ -71,7 +71,7 @@ export default function SearchSection() {
           ))}
           {/* 添加底部指示器 */}
           <div
-            className="absolute bottom-1 h-[4px] bg-white rounded-full transition-all duration-300 ease-in-out"
+            className="absolute bottom-1 h-[4px] bg-white dark:bg-white/80 rounded-full transition-all duration-300 ease-in-out"
             style={{
               left: `${(100 / 6) * activeTab + (100 / 6) * 0.25}%`, // 向右偏移 1/4 标签宽度
               width: `${(100 / 6) * 0.5}%`, // 设置为标签宽度的一半
@@ -83,7 +83,7 @@ export default function SearchSection() {
           onSubmit={handleSubmit}
         >
           <input
-            className="rounded-full w-full h-[50px] text-base px-5 py-2 outline-none"
+            className="dark:bg-[#2c2e2f] rounded-full w-full h-[50px] text-base px-5 py-2 outline-none"
             type="text"
             placeholder={selectedEngine.placeholder}
             value={searchText}

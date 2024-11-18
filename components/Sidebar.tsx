@@ -23,7 +23,7 @@ export default function Sidebar() {
 
   return (
     <div
-      className={`fixed left-0 top-0 h-screen bg-white transition-transform duration-150 ease-in-out w-[170px] z-[1090] -translate-x-full md:translate-x-0 ${
+      className={`fixed left-0 top-0 h-screen bg-white dark:bg-[#2c2e2f] transition-transform duration-150 ease-in-out w-[170px] z-[1090] -translate-x-full md:translate-x-0 ${
         isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
       } ${isCollapsed ? "md:w-[60px]" : "md:w-[170px]"}`}
     >
@@ -36,14 +36,14 @@ export default function Sidebar() {
               height={40}
               width={153}
               alt="在线工具网"
-              className="logo-light"
+              className="dark:hidden"
             />
             <Image
               src="/images/bt8-expand-dark.png"
               height={40}
               width={153}
               alt="在线工具网"
-              className="logo-dark hidden"
+              className="hidden dark:block"
             />
           </Link>
           <Link href="/" className={isCollapsed ? "" : "hidden"}>

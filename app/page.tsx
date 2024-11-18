@@ -11,11 +11,14 @@ import { useSettings } from "@/hooks/use-settings";
 import FriendLinkSection from "@/components/FriendLinkSection";
 import Footer from "@/components/Footer";
 import { useMediaQuery } from "usehooks-ts";
+import { Moon, MoonStar, Search, Sun } from "lucide-react";
+import { useTheme } from "next-themes";
 
 export default function Home() {
   const { isCollapsed, isMobileMenuOpen, setIsCollapsed, setIsMobileMenuOpen } =
     useSettings();
   const isMobile = useMediaQuery("(max-width: 768px)");
+  const { theme, setTheme } = useTheme();
   useEffect(() => {
     if (isMobileMenuOpen && isMobile) {
       document.body.style.overflow = "hidden";
@@ -64,6 +67,22 @@ export default function Home() {
             isMobileMenuOpen ? "block" : "hidden pointer-events-none"
           }`}
         />
+        {/* 搜索按钮和夜间模式切换按钮 */}
+        <div className="flex flex-col gap-2 fixed bottom-5 right-5 text-black dark:text-white">
+          <button className="bg-white dark:bg-[#2c2e2f]  p-3 rounded-full">
+            <Search className="w-4 h-4" />
+          </button>
+          <button
+            className="bg-white dark:bg-[#2c2e2f]  p-3 rounded-full"
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+          >
+            {theme === "dark" ? (
+              <Sun className="w-4 h-4" />
+            ) : (
+              <MoonStar className="w-4 h-4" />
+            )}
+          </button>
+        </div>
       </div>
     </div>
   );

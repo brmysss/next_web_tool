@@ -34,7 +34,7 @@ export default function SiteCard({
             rel="noopener noreferrer"
             className="block w-full h-full no-underline"
           >
-            <div className="group w-full h-full flex bg-white rounded-lg shadow-md p-4 justify-between items-center transition-transform duration-200 hover:-translate-y-1">
+            <div className="group w-full h-full flex bg-white dark:bg-[#2c2e2f] rounded-lg shadow-md p-4 justify-between items-center transition-transform duration-200 hover:-translate-y-1">
               <div className="flex items-center flex-1 min-w-0">
                 <FallbackImage
                   src={logoSrc}
@@ -44,7 +44,7 @@ export default function SiteCard({
                   height={40}
                 />
                 <div className="flex flex-col justify-center flex-1 min-w-0">
-                  <p className="font-bold text-sm group-hover:text-red-500 transition-colors duration-200 overflow-hidden text-ellipsis whitespace-nowrap">
+                  <p className="font-bold text-sm group-hover:text-red-500 dark:group-hover:text-white dark:text-white/50 transition-colors duration-200 overflow-hidden text-ellipsis whitespace-nowrap">
                     {name}
                   </p>
                   <p className="text-[10.5px] font-normal text-gray-500 overflow-hidden text-ellipsis whitespace-nowrap block">

@@ -23,7 +23,9 @@ export default function Header() {
       className={`fixed top-0 ${
         isCollapsed ? "md:left-[60px]" : "md:left-[170px]"
       } left-0 right-0 h-[74px] z-50 transition-colors duration-300 ${
-        isScrolled ? "bg-white/70 backdrop-blur-sm text-gray-700" : "text-white"
+        isScrolled
+          ? "bg-white/70 dark:bg-[#2c2e2f] backdrop-blur-sm text-gray-700 dark:text-white/80"
+          : "text-white"
       }`}
     >
       <div className="flex justify-between">

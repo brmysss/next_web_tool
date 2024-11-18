@@ -16,7 +16,10 @@ export default function SiteSection({ title, id, sites }: SiteSectionProps) {
   return (
     <div className="site-list px-4 py-4">
       {/* 分类标题 */}
-      <h4 id={id} className="text-lg font-medium mb-4 flex items-center">
+      <h4
+        id={id}
+        className="text-lg font-medium mb-4 flex items-center text-gray-500"
+      >
         <TagIcon className="w-4 h-4 mr-2 rotate-135" />
         {title}
       </h4>

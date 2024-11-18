@@ -35,7 +35,7 @@ const SearchEngine = ({
             before:w-0 before:h-0 
             before:border-l-[8px] before:border-l-transparent
             before:border-r-[8px] before:border-r-transparent
-            before:border-t-[8px] before:border-t-white
+            before:border-t-[8px] before:border-t-white dark:before:border-t-white/80
             ${
               index === selectedIndex
                 ? "before:opacity-100 text-white"

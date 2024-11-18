@@ -63,7 +63,7 @@ const ExpandableMenu = ({
       <Link
         target={target || "_self"}
         href={parentHref}
-        className="py-4 flex items-center text-slate-600 pl-6 hover:text-red-500 text-sm"
+        className="py-4 flex items-center text-slate-600 dark:text-white/80 dark:hover:text-white dark:hover:bg-[#232526] pl-6 hover:text-red-500 text-sm"
         onClick={(e) => {
           onMenuClicked?.(id, !isOpen);
           handleClick(parentHref, e, false);
@@ -97,7 +97,7 @@ const ExpandableMenu = ({
               <Link
                 href={item.href}
                 onClick={(e) => handleClick(item.href, e, true)}
-                className="py-4 flex items-center text-slate-600 pl-6 hover:text-red-500 text-sm"
+                className="py-4 flex items-center text-slate-600 dark:text-white/80 pl-6 dark:hover:bg-[#232526] dark:hover:text-white hover:text-red-500 text-sm"
               >
                 <span className="ml-6 text-xs">{item.title}</span>
               </Link>
