@@ -46,8 +46,14 @@ export default function Home() {
         className={`fixed inset-0 z-[9999] flex items-center justify-center bg-black/50 backdrop-blur-sm animate-in fade-in duration-300 ${
           isOpen ? "block" : "hidden"
         }`}
+        onClick={(e) => {
+          // 如果点击的是最外层容器，则关闭弹窗
+          if (e.target === e.currentTarget) {
+            onClose();
+          }
+        }}
       >
-        <div className="w-[480px] max-w-[90vw] rounded-lg bg-white animate-in slide-in-from-top duration-300">
+        <div className="w-[480px] max-w-[90vw] rounded-lg bg-white dark:bg-[#2c2e2f] animate-in slide-in-from-top duration-300">
           <div className="flex items-center justify-between border-b px-6 py-4">
             <button
               onClick={onClose}
