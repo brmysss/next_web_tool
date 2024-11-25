@@ -11,8 +11,9 @@ import { useSettings } from "@/hooks/use-settings";
 import FriendLinkSection from "@/components/FriendLinkSection";
 import Footer from "@/components/Footer";
 import { useMediaQuery } from "usehooks-ts";
-import { Moon, MoonStar, Search, Sun, X } from "lucide-react";
+import { MoonStar, Search, Sun, X } from "lucide-react";
 import { useTheme } from "next-themes";
+import SearchDialog from "@/components/SearchDialog";
 
 export default function Home() {
   const [showSearchDialog, setShowSearchDialog] = useState(false);
@@ -36,41 +37,6 @@ export default function Home() {
   useEffect(() => {
     setIsCollapsed(false);
   }, [isMobile]);
-
-  const SearchDialog: React.FC<{ isOpen: boolean; onClose: () => void }> = ({
-    isOpen,
-    onClose,
-  }) => {
-    return (
-      <div
-        className={`fixed inset-0 z-[9999] flex items-center justify-center bg-black/50 backdrop-blur-sm animate-in fade-in duration-300 ${
-          isOpen ? "block" : "hidden"
-        }`}
-        onClick={(e) => {
-          // 如果点击的是最外层容器，则关闭弹窗
-          if (e.target === e.currentTarget) {
-            onClose();
-          }
-        }}
-      >
-        <div className="w-[480px] max-w-[90vw] rounded-lg bg-white dark:bg-[#2c2e2f] animate-in slide-in-from-top duration-300">
-          <div className="flex items-center justify-between border-b px-6 py-4">
-            <button
-              onClick={onClose}
-              className="rounded-full p-1 hover:bg-gray-100"
-            >
-              <X className="h-5 w-5" />
-            </button>
-          </div>
-          <div className="p-6">
-            <div>
-              <h1>分享书摘</h1>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  };
 
   return (
     <div className="min-h-screen flex overflow-x-hidden">
