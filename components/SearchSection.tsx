@@ -78,6 +78,7 @@ export default function SearchSection() {
             }}
           />
         </div>
+        {/* 搜索框 */}
         <form
           className="relative w-full flex md:w-[800px] justify-center"
           onSubmit={handleSubmit}
@@ -98,8 +99,7 @@ export default function SearchSection() {
             <Search className="h-5 w-5" />
           </button>
         </form>
-        {/* 封装成一个组件，不需要activeTool, 组件里面根据传入的selectedEngines自己维护一份state, 不改变传入的selectedEngines */}
-        {/* 再传入一个回调，回调中返回placeHolder和action */}
+        {/* 底部指示器 */}
         <SearchEngine
           engines={selectedSearchType.engines}
           onEngineSelected={onEngineSelected}

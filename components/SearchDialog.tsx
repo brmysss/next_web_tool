@@ -3,6 +3,8 @@
 import { ChevronDown, ChevronRight, Search, X } from "lucide-react";
 import { useState } from "react";
 import { searchConfig } from "@/config/config";
+import { SearchType } from "@/types/SearchType";
+import { EngineType } from "@/types/EngineType";
 
 interface DialogProps {
   isOpen: boolean;
@@ -12,6 +14,17 @@ interface DialogProps {
 const SearchDialog = ({ isOpen, onClose }: DialogProps) => {
   const [showPopup, setShowPopup] = useState(false);
   const [searchTypes, setSearchTypes] = useState(searchConfig);
+  const [selectedSearchType, setSelectedSearchType] = useState<SearchType>(
+    searchConfig[0]
+  );
+  const [selectedEngine, setSelectedEngine] = useState<EngineType>(
+    searchConfig[0].engines[0]
+  );
+
+  const handleSearchTypeClick = (type: SearchType) => {
+    setSelectedSearchType(type);
+    setSelectedEngine(type.engines[0]);
+  };
 
   return (
     <div
@@ -36,71 +49,56 @@ const SearchDialog = ({ isOpen, onClose }: DialogProps) => {
                   onMouseEnter={() => setShowPopup(true)}
                   onMouseLeave={() => setShowPopup(false)}
                 >
-                  常用
+                  {selectedSearchType.label}
                   <ChevronRight className="h-4 w-4" />
                 </button>
                 {/* 弹出菜单 */}
                 {showPopup && (
                   <div
-                    className="absolute top-full left-1/2 -translate-x-1/2 bg-white dark:bg-[#2c2e2f] rounded-lg shadow-lg border dark:border-gray-700 w-20 before:content-[''] before:absolute before:top-[-6px] before:left-1/2 before:-translate-x-1/2 before:w-3 before:h-3 before:rotate-45 before:bg-white dark:before:bg-[#2c2e2f] before:border-t before:border-l before:border-gray-200 dark:before:border-gray-700"
+                    className="z-10 absolute top-full left-1/2 -translate-x-1/2 bg-white dark:bg-[#2c2e2f] rounded-lg shadow-lg border dark:border-gray-700 w-20 before:content-[''] before:absolute before:top-[-6px] before:left-1/2 before:-translate-x-1/2 before:w-3 before:h-3 before:rotate-45 before:bg-white dark:before:bg-[#2c2e2f] before:border-t before:border-l before:border-gray-200 dark:before:border-gray-700"
                     onMouseEnter={() => setShowPopup(true)}
                     onMouseLeave={() => setShowPopup(false)}
                   >
                     <div className="py-2 space-y-1">
-                      <button className="w-full text-center py-1 text-sm hover:bg-gray-100 dark:hover:bg-gray-800">
-                        常用
-                      </button>
-                      <button className="w-full text-center py-1 text-sm hover:bg-gray-100 dark:hover:bg-gray-800">
-                        搜索
-                      </button>
-                      <button className="w-full text-center py-1 text-sm hover:bg-gray-100 dark:hover:bg-gray-800">
-                        工具
-                      </button>
-                      <button className="w-full text-center py-1 text-sm hover:bg-gray-100 dark:hover:bg-gray-800">
-                        社区
-                      </button>
-                      <button className="w-full text-center py-1 text-sm hover:bg-gray-100 dark:hover:bg-gray-800">
-                        生活
-                      </button>
-                      <button className="w-full text-center py-1 text-sm hover:bg-gray-100 dark:hover:bg-gray-800">
-                        求职
-                      </button>
+                      {searchTypes.map((type) => (
+                        <button
+                          key={type.id}
+                          className="w-full text-center py-1 text-sm hover:bg-gray-100 dark:hover:bg-gray-800"
+                          onClick={() => handleSearchTypeClick(type)}
+                        >
+                          {type.label}
+                        </button>
+                      ))}
                     </div>
                   </div>
                 )}
               </div>
-              <button className="text-gray-500 px-3 py-1 text-sm hover:bg-gray-100 dark:hover:bg-gray-800 rounded">
-                百度
-              </button>
-              <button className="text-gray-500 px-3 py-1 text-sm hover:bg-gray-100 dark:hover:bg-gray-800 rounded">
-                必应
-              </button>
-              <button className="text-gray-500 px-3 py-1 text-sm hover:bg-gray-100 dark:hover:bg-gray-800 rounded">
-                谷歌
-              </button>
-              <button className="text-gray-500 px-3 py-1 text-sm hover:bg-gray-100 dark:hover:bg-gray-800 rounded">
-                软件
-              </button>
-              <button className="text-gray-500 px-3 py-1 text-sm hover:bg-gray-100 dark:hover:bg-gray-800 rounded">
-                文献
-              </button>
+              <div className="flex gap-1">
+                {selectedSearchType.engines.map((engine, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setSelectedEngine(engine)}
+                    className={`text-gray-500 px-3 py-1 text-sm ${
+                      engine.name === selectedEngine.name ? "bg-gray-100" : ""
+                    } hover:bg-gray-100 dark:hover:bg-gray-800 rounded`}
+                  >
+                    {engine.name}
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
 
           {/* 搜索框部分 */}
-          <div>
-            <div className="flex items-center gap-2">
-              <div className="flex-1">
-                <input
-                  type="text"
-                  placeholder="输入关键词搜索"
-                  className="w-full px-4 py-2 rounded-md bg-gray-100 dark:border-gray-700 dark:bg-gray-800 focus:outline-none"
-                />
-              </div>
-              <button className="px-4 py-2 bg-gray-800 text-white rounded-md hover:bg-gray-700">
-                <Search className="h-4 w-4" />
-              </button>
-            </div>
+          <div className="relative flex-1">
+            <input
+              type="text"
+              placeholder={selectedEngine.placeholder}
+              className="w-full px-4 py-2 rounded-md bg-gray-100 dark:border-gray-700 dark:bg-gray-800 focus:outline-none"
+            />
+            <button className="absolute right-3 top-1/2 transform -translate-y-1/2 px-4 py-2 bg-gray-800 text-white rounded-md hover:bg-gray-700">
+              <Search className="h-4 w-4" />
+            </button>
           </div>
         </div>
 
