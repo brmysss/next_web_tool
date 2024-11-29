@@ -53,7 +53,7 @@ const SearchDialog = ({ isOpen }: DialogProps) => {
         }
       }}
     >
-      <div className="w-[800px] flex flex-col items-center animate-in slide-in-from-top duration-150">
+      <div className="p-4 w-[800px] flex flex-col items-center animate-in slide-in-from-top duration-150">
         <div className="w-full rounded-lg bg-white dark:bg-[#2c2e2f] px-4 py-10">
           {/* 顶部导航栏 */}
           <div className="flex">
