@@ -60,7 +60,7 @@ export default function Home() {
 
         <div className="container mx-auto max-w-[1900px]">
           {siteConfig.map((item, index) => (
-            <SiteSection key={index} id={index.toString()} {...item} />
+            <SiteSection key={index} {...item} />
           ))}
           {/* 友情链接 */}
           <FriendLinkSection />

@@ -39,9 +39,7 @@ const ExpandableMenu = ({
   ) => {
     if (href?.startsWith("#")) {
       e.preventDefault();
-      // 处理纯数字的情况，添加额外的属性选择器
-      const selector = href.match(/^\#\d+$/) ? `[id="${href.slice(1)}"]` : href;
-      const targetElement = document.querySelector(selector);
+      const targetElement = document.querySelector(href);
       if (targetElement) {
         const offsetTop =
           targetElement.getBoundingClientRect().top + window.pageYOffset - 90;
