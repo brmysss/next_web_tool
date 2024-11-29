@@ -8,8 +8,14 @@ import Link from "next/link";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
-  const { isCollapsed, setIsCollapsed, isMobileMenuOpen, setIsMobileMenuOpen } =
-    useSettings();
+  const {
+    isCollapsed,
+    setIsCollapsed,
+    isMobileMenuOpen,
+    setIsMobileMenuOpen,
+    isSearchDialogOpen,
+    setIsSearchDialogOpen,
+  } = useSettings();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -69,7 +75,10 @@ export default function Header() {
         </div>
 
         <div className="items-center h-16 gap-1 flex">
-          <button className="p-2 flex items-center md:hover:text-red-500">
+          <button
+            onClick={() => setIsSearchDialogOpen(true)}
+            className="p-2 flex items-center md:hover:text-red-500"
+          >
             <Search className="w-6 h-6" />
           </button>
           <button

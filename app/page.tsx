@@ -16,9 +16,14 @@ import { useTheme } from "next-themes";
 import SearchDialog from "@/components/SearchDialog";
 
 export default function Home() {
-  const [showSearchDialog, setShowSearchDialog] = useState(false);
-  const { isCollapsed, isMobileMenuOpen, setIsCollapsed, setIsMobileMenuOpen } =
-    useSettings();
+  const {
+    isCollapsed,
+    isMobileMenuOpen,
+    isSearchDialogOpen,
+    setIsCollapsed,
+    setIsMobileMenuOpen,
+    setIsSearchDialogOpen,
+  } = useSettings();
   const isMobile = useMediaQuery("(max-width: 768px)");
   const { theme, setTheme } = useTheme();
   useEffect(() => {
@@ -73,7 +78,7 @@ export default function Home() {
         <div className="flex flex-col gap-2 fixed bottom-5 right-5 text-black dark:text-white">
           <button
             className="bg-white dark:bg-[#2c2e2f]  p-3 rounded-full"
-            onClick={() => setShowSearchDialog(true)}
+            onClick={() => setIsSearchDialogOpen(true)}
           >
             <Search className="w-4 h-4" />
           </button>
@@ -91,10 +96,7 @@ export default function Home() {
       </div>
 
       {/* 弹窗 */}
-      <SearchDialog
-        isOpen={showSearchDialog}
-        onClose={() => setShowSearchDialog(false)}
-      />
+      <SearchDialog isOpen={isSearchDialogOpen} />
     </div>
   );
 }
