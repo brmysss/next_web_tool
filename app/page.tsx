@@ -11,11 +11,12 @@ import { useSettings } from "@/hooks/use-settings";
 import FriendLinkSection from "@/components/FriendLinkSection";
 import Footer from "@/components/Footer";
 import { useMediaQuery } from "usehooks-ts";
-import { MoonStar, Search, Sun, X } from "lucide-react";
+import { ArrowUp, MoonStar, MoveUp, Search, Sun, X } from "lucide-react";
 import { useTheme } from "next-themes";
 import SearchDialog from "@/components/SearchDialog";
 
 export default function Home() {
+  const [isVisible, setIsVisible] = useState(false);
   const {
     isCollapsed,
     isMobileMenuOpen,
@@ -40,8 +41,29 @@ export default function Home() {
   }, [isMobileMenuOpen]);
 
   useEffect(() => {
+    const toggleVisibility = () => {
+      if (window.scrollY > 300) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+
+    window.addEventListener("scroll", toggleVisibility);
+
+    return () => window.removeEventListener("scroll", toggleVisibility);
+  }, []);
+
+  useEffect(() => {
     setIsCollapsed(false);
   }, [isMobile]);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
 
   return (
     <div className="min-h-screen flex overflow-x-hidden">
@@ -76,6 +98,14 @@ export default function Home() {
         />
         {/* 搜索按钮和夜间模式切换按钮 */}
         <div className="flex flex-col gap-2 fixed bottom-5 right-5 text-black dark:text-white">
+          <button
+            className={`bg-white dark:bg-[#2c2e2f] p-3 rounded-full transition-transform fade-in duration-150 ease-in-out ${
+              isVisible ? "block" : "hidden pointer-events-none"
+            }`}
+            onClick={scrollToTop}
+          >
+            <MoveUp className="w-4 h-4" />
+          </button>
           <button
             className="bg-white dark:bg-[#2c2e2f]  p-3 rounded-full"
             onClick={() => setIsSearchDialogOpen(true)}
