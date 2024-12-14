@@ -16,13 +16,6 @@
 - zustand
 - lucide-react
 
-## 待完善
-
-目前作者正抓紧开发中，剩余以下功能：
-
-- [ ] 移动端适配
-- [ ] 日夜间模式切换
-
 ## 联系
 
 twitter: [@mundane799699](https://x.com/mundane799699)
