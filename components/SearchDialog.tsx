@@ -53,14 +53,14 @@ const SearchDialog = ({ isOpen }: DialogProps) => {
         }
       }}
     >
-      <div className="p-4 w-[800px] flex flex-col items-center animate-in slide-in-from-top duration-150">
+      <div className="p-4 w-full md:w-[800px] flex flex-col items-center animate-in slide-in-from-top duration-150">
         <div className="w-full rounded-lg bg-white dark:bg-[#2c2e2f] px-4 py-10">
           {/* 顶部导航栏 */}
-          <div className="flex">
+          <div className="flex w-full">
             {/* 选项按钮和popup */}
             <div className="relative">
               <button
-                className="text-gray-500 flex items-center gap-1 px-2 py-1 text-base"
+                className="text-gray-500 whitespace-nowrap flex items-center gap-1 px-2 py-1 text-base"
                 onMouseEnter={() => setShowPopup(true)}
                 onMouseLeave={() => setShowPopup(false)}
               >
@@ -88,12 +88,12 @@ const SearchDialog = ({ isOpen }: DialogProps) => {
                 </div>
               )}
             </div>
-            <div className="flex gap-1">
+            <div className="flex gap-1 overflow-x-auto">
               {selectedSearchType.engines.map((engine, index) => (
                 <button
                   key={index}
                   onClick={() => setSelectedEngine(engine)}
-                  className={`text-gray-500 px-3 py-1 text-sm ${
+                  className={`text-gray-500 whitespace-nowrap px-3 py-1 text-sm ${
                     engine.name === selectedEngine.name ? "bg-gray-100" : ""
                   } hover:bg-gray-100 dark:hover:bg-gray-800`}
                 >
